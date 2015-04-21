@@ -1,0 +1,422 @@
+/* Start reset */
+
+
+*{  margin:0 ;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    list-style:none;
+    text-decoration:none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+html, body{
+	font-family: 'Open Sans', sans-serif;
+	height: 100%;
+    background: #eee;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	color: #777777;
+	font-weight: normal;
+	padding-bottom: 10px;
+}
+
+
+h1{font-size:35px;}
+h2{font-size:30px;}
+h3{font-size:25px;}
+h4{font-size:20px;}
+h5{font-size:15px;}
+h6{font-size:10px;}
+
+p{
+	font-weight:normal;
+	margin: 0;
+}
+
+
+ol li,
+ul li{
+	margin-top:0.6em;
+	margin-left:1.9em;
+	list-style-type:disc;
+}
+
+/* End reset */
+
+
+
+
+
+header{
+    background: url(../img/header.jpg);
+    background-size: cover;
+    height: 43px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right:0;
+    text-align: center;
+    position: fixed;
+    z-index:  2;
+    text-align: center;
+
+    padding-top: 7px;
+}
+
+header .logo{
+    display: inline-block;
+    height: 36px;
+    margin-right: 10px;
+    background: url(../img/logo.png)no-repeat;
+    background-size: auto 100%;
+    background-position: center center;
+    width: 90px;
+}
+
+header .logo-procuradoria{
+    display: inline-block;
+    height: 36px;
+    margin-left: 10px;    
+    background: url(../img/procuraduria.png)no-repeat;
+    background-size: auto 100%;
+    background-position: center center;
+    width: 80px;
+}
+
+
+
+
+
+.wrap{
+    margin: 50px 0 0 0;
+}
+
+    .swiper-container {
+        width: 100%;
+       height: 200px;
+        background: #fff;  
+        z-index: 0 !important;      
+    }
+
+
+    .swiper-slide {
+        width: inherit !important;
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+         background-size: cover !important;
+        
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+.swiper-pagination{
+    bottom: 0 !important;
+  /*  background: rgba(255,255,255,.5);*/
+    padding: 4px 0;
+    z-index: 1 !important;
+}
+
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background: #008ED4 !important;
+  opacity: 1 !important;
+
+}
+
+.swiper-pagination-bullet-active {
+  background: #A8E600 !important; 
+}
+
+.swiper-button-disabled{
+    opacity: 0 !important;
+}
+
+.swiper-button-next{
+  background-image: url("../img/next.png");
+}
+
+.swiper-button-prev {
+  background-image: url("../img/prev.png");
+}
+
+[data-bg='blue1']{ background-color:#008ed4; }
+[data-bg='blue2']{ background-color:#0186C7; }
+[data-bg='blue3']{ background-color:#007FBD; }
+[data-bg='blue4']{ background-color:#0078B3; }
+[data-bg='blue5']{ background-color:#0171A8; }
+[data-bg='blue6']{ background-color:#016A9D; }
+[data-bg='blue7']{ background-color:#01608F; }
+[data-bg='blue8']{ background-color:#015883; }
+
+
+/* Start acordion */
+.acordion{
+	margin: 0;
+	padding: 0; 
+}
+.acordion li{
+	list-style: none;
+	margin:0;
+	padding: 3px 0;
+}
+.acordion-title{
+    margin-left: 15px;
+	text-transform: uppercase;
+	padding: 10px 20px 10px 30px;
+	cursor: pointer;
+	background: url(../img/option.png)no-repeat;
+    background-size: 20px;
+    background-position: left center;
+    color:#fff;
+    font-weight: bold;
+    font-size: 13px;
+}
+.activo .acordion-title,
+.acordion-title:hover{
+	background-image:  url(../img/open-option.png);
+}
+.acordion-content{
+    background: #fff;
+	height: 0;
+	padding: 0 20px;
+	overflow: hidden;
+	font-size: 12px;
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+}
+.activo .acordion-content{
+	height: auto;
+	padding-top:15px;
+	padding-bottom:15px;
+	overflow: auto;
+}
+
+
+.acordion-content img {
+    height: auto;
+    width: 100%;
+    border: 0;
+    margin: 5px 0;
+} 
+
+.acordion-content p{
+    margin-bottom: 12px; 
+    text-align: justify;
+    font-size: 13px;
+}
+
+.topics{
+    margin-bottom: 8px;
+}
+.topics li{
+    margin-left: 25px;
+    margin-bottom: 5px;
+    list-style: inherit;
+    list-style-image: url(../img/vineta.png) !important;
+    list-style-position: outside;
+     font-size: 13px;
+    text-align: justify;
+}
+
+.topics .sub{
+    margin-left: 50px;
+}
+
+.acordion a{
+    text-decoration: none;
+}
+
+.acordion h2{
+	color:#008ED4;
+    margin-bottom: 12px;
+    font-size: 20px;
+    padding: 4px 0;
+    width: 100%;
+    border-bottom: 1px solid #008ED4;
+}
+
+.acordion h3{
+	color:#008ED4;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.acordion span{
+	color:#008ED4;
+}
+
+
+.acordion .subtitle{
+    font-weight: bold;
+    color:#008ED4;
+}
+/* End acordion */
+
+
+footer{
+    background: #a8e601;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    display: none;
+}
+
+
+footer img{
+    display: inline-block;    
+    height: 40px;
+    margin: 5px auto;
+    cursor: pointer;
+    position: absolute;
+    z-index: 999;
+    background: none;
+    border: 0;
+    overflow: hidden;
+    margin-left: -20px;
+}
+
+#redes:hover, #redes:active{
+    background: transparent;    
+}
+
+
+
+.icon-left,.icon-center,.icon-right{
+    opacity: 0;
+    position: absolute;
+    z-index: 888;
+
+}
+
+
+
+.rotate45{
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+    	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+}
+
+
+.rotate0{
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    transform:rotate(0deg);
+    -webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+
+
+.embed-responsive.embed-responsive-16by9 {
+padding-bottom: 56.25%;
+}
+.embed-responsive {
+margin:25px 0;
+position: relative;
+display: block;
+height: 0;
+padding: 0;
+overflow: hidden;
+}
+.embed-responsive .embed-responsive-item,
+ .embed-responsive iframe,
+  .embed-responsive embed,
+   .embed-responsive object {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: 0;
+}
+
+
+.loading{
+    height: 4px;
+    position: absolute;
+    z-index: 9999;
+    bottom: 0;
+    left: 0;
+    width: 0%; 
+    background: #A8E601;
+}
+
+
+.splash {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;  
+    background: url(../img/bg-splash.png) top center / 100% 150px,
+                url(../img/logo-splash.png) center center / 100px auto, 
+                url(../img/logo-procuraduria.png) center bottom / 60px auto;  
+    background-repeat: no-repeat;  
+    background-color: #fff;
+    text-align: center;
+    -webkit-transition: all 1s;
+	 -moz-transition: all 1s;
+	  -ms-transition: all 1s;
+	   -o-transition: all 1s;
+	    transition: all 1s;
+}
+
+.logo-splash{
+    display: block;
+    width: 110px;
+    height: auto;
+    margin: 160px auto 0 auto;
+}
+
+.escudo-splash{
+    width: 60px;
+    margin-left: -30px;
+    position: absolute;
+    bottom: 25px;
+}
+
+
+.contenido {
+  height: 0px;
+  overflow: hidden;
+}
