@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<widget xmlns   = "http://www.w3.org/ns/widgets"
+		xmlns:gap   = "http://phonegap.com/ns/1.0"
+		id          = "com.grupoiris.procuraduria"
+		versionCode = "1" 
+		version     = "0.0.1" >
+	<!-- versionCode is optional and Android only -->
+	
+	<name>Procuraduria app</name>
+	<description>
+		Procuraduria app
+	</description>
+	<author href="https://irisdev.co" email="julia.montoya@grupoiris.co">
+			Julian Montoya c.
+	</author>
+	
+	<preference name="permissions" value="none"/>
+	
+	<access origin="*"/>
+	
+</widget>
