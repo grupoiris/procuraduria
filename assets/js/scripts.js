@@ -1,8 +1,7 @@
 
 
-$(".splash").click(hidesplash);
-setTimeout(hidesplash,2500);
-
+/*$(".splash").click(hidesplash);
+setTimeout(hidesplash,2500);*/
 function hidesplash(){
     $(".splash").removeClass("fadeIn"); 
     $(".splash").addClass("fadeOut");

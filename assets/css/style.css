@@ -417,6 +417,6 @@ border: 0;
 
 
 .contenido {
-  height: 0px;
+  height: auto;
   overflow: hidden;
 }
