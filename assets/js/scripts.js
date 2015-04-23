@@ -57,7 +57,7 @@ $(document).ready(function() {
     return false;
  });
  
- $('video').html('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/n4vlnY0dn4E"></iframe>  </div> <div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3MBH85SWggg"></iframe> </div>');
+ $('#video').html('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/n4vlnY0dn4E"></iframe>  </div> <div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3MBH85SWggg"></iframe> </div>');
  
 });
 
