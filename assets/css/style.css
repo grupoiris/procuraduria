@@ -124,18 +124,23 @@ header .logo-procuradoria{
         -webkit-align-items: center;
         align-items: center;
     }
-	/*.sw2 .swiper-slide{
+	.sw2 .swiper-slide{
 		width: 100% !important;
 		height: 190px !important;
 		background-size: cover !important;
-	}*/
-.swiper-pagination,.swiper-pagination2{
+	}
+.swiper-pagination,{
     bottom: 0 !important;
   /*  background: rgba(255,255,255,.5);*/
     padding: 4px 0;
     z-index: 1 !important;
 }
-
+.swiper-pagination2{
+  text-align: center;
+}
+.swiper-pagination2 .swiper-pagination-bullet{
+	margin: 0 5px;
+}
 .swiper-pagination-bullet {
   width: 10px !important;
   height: 10px !important;
