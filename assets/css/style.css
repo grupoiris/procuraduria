@@ -110,8 +110,7 @@ header .logo-procuradoria{
         text-align: center;
         font-size: 18px;
         background: #fff;
-         background-size: cover !important;
-        
+        background-size: cover !important;                
         display: -webkit-box;
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -130,7 +129,7 @@ header .logo-procuradoria{
 		height: 190px !important;
 		background-size: cover !important;
 	}*/
-.swiper-pagination{
+.swiper-pagination,.swiper-pagination2{
     bottom: 0 !important;
   /*  background: rgba(255,255,255,.5);*/
     padding: 4px 0;
