@@ -56,19 +56,6 @@ $(document).ready(function() {
     });
     return false;
  });
- var swiper = new Swiper('.swiper-container2', {
-        pagination: '.swiper-pagination2',
-        paginationClickable: false,
-        spaceBetween: 30,
-        centeredSlides: true,
-        nextButton: '.swiper-button-next2',
-        prevButton: '.swiper-button-prev2',
-        autoplay: 5000,
-        autoplayDisableOnInteraction: false,
-        slidesPerView: 1,
-        paginationClickable: true,
-        loop: true
-    });
  
 });
 
