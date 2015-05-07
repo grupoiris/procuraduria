@@ -102,6 +102,8 @@ header .logo-procuradoria{
 		height: 180px;
         background: #fff;  
         z-index: 0 !important;     
+          height: 180px;
+		overflow-x: hidden;
 	}
 	.swiper-pagination2{
 		text-align: center;
