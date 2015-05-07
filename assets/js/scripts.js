@@ -59,7 +59,22 @@ $(document).ready(function() {
  
 });
 
-
+function launchSwiper2(){
+	 var swiper2 = new Swiper('.swiper-container2', {
+        pagination: '.swiper-pagination2',
+        paginationClickable: false,
+        spaceBetween: 30,
+        centeredSlides: true,
+        nextButton: '.swiper-button-next2',
+        prevButton: '.swiper-button-prev2',
+        autoplay: 5000,
+        autoplayDisableOnInteraction: false,
+        slidesPerView: 1,
+        paginationClickable: true,
+        loop: true,
+        height:180
+    });
+}
 function openPS(img) {
     var pswpElement = document.querySelectorAll('.pswp')[0];
     var items = [{ src: 'assets/img/'+img, w: 1024, h: 1088 }];    
