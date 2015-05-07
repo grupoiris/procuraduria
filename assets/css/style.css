@@ -140,6 +140,7 @@ header .logo-procuradoria{
     }
 	.swiper-container2 .swiper-slide{
 		width: 100% !important;
+		height: 190px !important;
 		background-size: cover !important;
 	}
 .swiper-pagination{
