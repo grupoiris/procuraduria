@@ -97,6 +97,18 @@ header .logo-procuradoria{
     margin: 60px 0 0 0;
 }
 
+	.swiper-container2 {
+		width: 100%;
+		height: 180px;
+        background: #fff;  
+        z-index: 0 !important;     
+	}
+	.swiper-pagination2{
+		text-align: center;
+	}
+	.swiper-pagination2 span{
+		margin: 0 5px;
+	}
     .swiper-container {
         width: 100%;
        height: 200px;
@@ -179,7 +191,7 @@ header .logo-procuradoria{
 }
 .acordion-title{
     margin-left: 15px;
-	text-transform: uppercase;
+	text-transform: inherit;
 	padding: 10px 20px 10px 30px;
 	cursor: pointer;
 	background: url(../img/option.png)no-repeat;
@@ -258,7 +270,7 @@ header .logo-procuradoria{
 
 .acordion h3{
 	color:#008ED4;
-    text-transform: uppercase;
+    text-transform: inherit;
     margin-bottom: 4px;
     font-size: 15px;
     width: 100%;

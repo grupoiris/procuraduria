@@ -56,6 +56,19 @@ $(document).ready(function() {
     });
     return false;
  });
+ var swiper = new Swiper('.swiper-container2', {
+        pagination: '.swiper-pagination2',
+        paginationClickable: false,
+        spaceBetween: 30,
+        centeredSlides: true,
+        nextButton: '.swiper-button-next2',
+        prevButton: '.swiper-button-prev2',
+        autoplay: 5000,
+        autoplayDisableOnInteraction: false,
+        slidesPerView: 1,
+        paginationClickable: true,
+        loop: true
+    });
  
 });
 
@@ -90,7 +103,7 @@ $(function(){
  });
 });
 
-setTimeout(loadVideos,5000);
+setTimeout(loadVideos,1000);
 function loadVideos(){
-	$('#video').html('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/n4vlnY0dn4E"></iframe>  </div> <div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3MBH85SWggg"></iframe> </div>');	
+	$('#video').append('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/n4vlnY0dn4E"></iframe>  </div> <div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3MBH85SWggg"></iframe> </div>');	
 }
