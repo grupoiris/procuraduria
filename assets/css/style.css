@@ -97,7 +97,7 @@ header .logo-procuradoria{
     margin: 60px 0 0 0;
 }
 
-	.swiper-container2 {
+	.sw2{
 		width: 100%;
         background: #fff;  
         z-index: 0 !important;     
@@ -138,7 +138,7 @@ header .logo-procuradoria{
         -webkit-align-items: center;
         align-items: center;
     }
-	.swiper-container2 .swiper-slide{
+	.sw2 .swiper-slide{
 		width: 100% !important;
 		height: 190px !important;
 		background-size: cover !important;
