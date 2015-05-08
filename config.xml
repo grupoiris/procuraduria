@@ -2,8 +2,8 @@
 	<widget xmlns   = "http://www.w3.org/ns/widgets"
 		xmlns:gap   = "http://phonegap.com/ns/1.0"
 		id          = "com.gruppoiris.procuraduriapp"
-		versionCode = "48" 
-		version     = "0.4.8" >
+		versionCode = "49" 
+		version     = "0.4.9" >
 	<!-- versionCode is optional and Android only -->
 	
 	<name>Procuraduria app</name>
