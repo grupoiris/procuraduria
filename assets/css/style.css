@@ -427,6 +427,8 @@ border: 0;
 .contenido {
   height: auto;
   overflow: hidden;
+  max-width: 670px;
+  margin: auto;
 }
 
  @media (min-width: 600px){
