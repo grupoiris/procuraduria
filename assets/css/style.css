@@ -434,7 +434,8 @@ border: 0;
 #contact_form input{
 	border: 1px solid #ccc;
 	height: 30px;
-	width: 60%;
+	width: 100%;
+	max-width: 380px;
 	margin-top: 5px;
 	padding: 0px 10px;
 	float: left;
@@ -442,14 +443,16 @@ border: 0;
 #contact_form textarea{
 	border: 1px solid #ccc;
 	height: 150px;
-	width: 60%;
+	width: 100%;
+	max-width: 380px;
 	margin-top: 5px;
 	float: left;
 	padding: 10px;
 }
 #contact_form hr{width: 100%; }
 #contact_form .error{
-	width: 60%;
+	width: 100%;
+	max-width: 380px;
 	margin: 0;
 	padding: 0px 10px;
 	background: #EC3237;
@@ -458,7 +461,8 @@ border: 0;
 	display: none;
 }
 #contact_form .success{
-	width: 60%;
+	width: 100%;
+	max-width: 380px;
 	margin: 0;
 	padding: 0px 10px;
 	background: #a8e601;
@@ -475,10 +479,7 @@ border: 0;
 	color: #333;
 	float: left;
 }
-  
-
-
- @media (min-width: 600px){
+@media (min-width: 600px){
 	.swiper-container{
 		  height: 400px;
 	}
