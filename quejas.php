@@ -9,7 +9,7 @@ $mensaje = '
 </head>
 <body style="max-width: 350px;margin:auto; text-align: center;font-family: sans-serif;">
 	<img src="http://irisdev.co/procuraduria/assets/img/procuraduria.png" />
-  	<div style="text-align: left; font-size: 20px;">
+  	<div style="text-align: left; font-size: 20px;color:#333;">
   		<div style="width:100%;float:left">
   			<b style="float:left;">Nombre</b><p style="float:left">'.$_GET["nombre"].'</p>
   		</div>
@@ -29,5 +29,5 @@ $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 $cabeceras .= 'From: procuraduriaApp<procuraduriaApp@procuraduriaapp.com>' . "\r\n";
 // Enviarlo
 $sended = mail($para, $título, $mensaje, $cabeceras);
-echo $sended;
+echo $_GET['callback'] . '(' . $sended . ')';
 ?>

@@ -115,12 +115,10 @@ function sendEmail(){
 				    isHtml:  true
 				});*/
 				$.getJSON('http://procuraduriaapp.com/quejas.php?callback=?',{ nombre:nom, email:ema, mensaje:msj },function(data){
-					console.log(data);					
 					$('.success').html("Enviado");
 					$('.success').show();
 					$('.error').hide();
 		        }).done(function(data2) {
-		        	console.log(data2);
 				    $('.success').html("Enviado");
 					$('.success').show();
 					$('.error').hide();
