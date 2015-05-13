@@ -2,8 +2,8 @@
 	<widget xmlns   = "http://www.w3.org/ns/widgets"
 		xmlns:gap   = "http://phonegap.com/ns/1.0"
 		id          = "com.gruppoiris.procuraduriapp"
-		versionCode = "51" 
-		version     = "0.4.6" >
+		versionCode = "52" 
+		version     = "0.4.7" >
 	<!-- versionCode is optional and Android only -->
 	
 	<name>Procuraduria app</name>
@@ -49,4 +49,5 @@
 	<gap:splash src="res/screen/screen.png" gap:platform="ios"     width="1024" height="768" />
 	<gap:splash src="res/screen/screen.png" gap:platform="winphone" />
 	
+	<gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.2" />
 </widget>

@@ -94,3 +94,44 @@ setTimeout(loadVideos,1000);
 function loadVideos(){
 	$('#video').append('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/n4vlnY0dn4E"></iframe>  </div> <div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3MBH85SWggg"></iframe> </div>');	
 }
+
+function sendEmail(){
+	$('.error').hide();
+	var nombre = $("#nombre").val();
+	var email = $("#email").val();
+	var mensaje = $("#mensaje").val();
+	if(validateEmail(email)){
+		if(nombre.length !== 0){
+			if(mensaje.length !== 0){
+				cordova.plugins.email.open({
+				    to:      'julian.montoya@grupoiris.co',
+				    subject: 'Queja o Reclamo desde ProcuraduriaApp',
+				    body:    '<h1>Nice greetings from Leipzig</h1>',
+				    isHtml:  true
+				});
+				$('.success').html("Enviado");
+				$('.success').show();
+				$('.error').hide();
+			}
+			else{
+				$('.error').html("Ingresa tu Queja o denuncia.");
+				$('.error').show();
+			}
+		}
+		else{
+			$('.error').html("Ingresa tu nombre");
+			$('.error').show();
+		}
+		
+		
+	}
+	else{
+		$('.error').html("email invalido");
+		$('.error').show();
+	}
+	
+}
+function validateEmail(email){
+	var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	return regex.test(email);
+}
