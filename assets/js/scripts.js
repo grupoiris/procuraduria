@@ -97,21 +97,34 @@ function loadVideos(){
 
 function sendEmail(){
 	$('.error').hide();
-	var nombre = $("#nombre").val();
-	var email = $("#email").val();
-	var mensaje = $("#mensaje").val();
-	if(validateEmail(email)){
-		if(nombre.length !== 0){
-			if(mensaje.length !== 0){
-				cordova.plugins.email.open({
+	$('.send_button').hide();
+	var nom = $("#nombre").val();
+	var ema = $("#email").val();
+	var msj = $("#mensaje").val();
+	if(validateEmail(ema)){
+		if(nom.length !== 0){
+			if(msj.length !== 0){
+				setTimeout(function(){
+				  $('.send_button').show();
+				}, 1000);
+				
+				/*cordova.plugins.email.open({
 				    to:      'julian.montoya@grupoiris.co',
 				    subject: 'Queja o Reclamo desde ProcuraduriaApp',
 				    body:    '<h1>Nice greetings from Leipzig</h1>',
 				    isHtml:  true
-				});
-				$('.success').html("Enviado");
-				$('.success').show();
-				$('.error').hide();
+				});*/
+				$.getJSON('http://procuraduriaapp.com/quejas.php?callback=?',{ nombre:nom, email:ema, mensaje:msj },function(data){
+					console.log(data);					
+					$('.success').html("Enviado");
+					$('.success').show();
+					$('.error').hide();
+		        }).done(function(data2) {
+		        	console.log(data2);
+				    $('.success').html("Enviado");
+					$('.success').show();
+					$('.error').hide();
+				  });				
 			}
 			else{
 				$('.error').html("Ingresa tu Queja o denuncia.");
