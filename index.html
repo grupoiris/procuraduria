@@ -74,9 +74,83 @@
 
 	
 	<section class="menu" data-depth="0.5">
-				<ul class="acordion">				
+				<ul class="acordion">	
 					<li data-bg="blue1">
-						<a href="#tab1"><div id="tab1" class="acordion-title">La prevención es mejor que la sanción</div></a>
+						<a href="#tab0"><div id="tab0" class="acordion-title">La Procuraduría en acción!</div></a>						
+						<div class="acordion-content">		
+							<ul class='topics'>
+	                            <li>La Procuraduría al aire<br />
+	                            	<div id="video"></div>
+	                            </li>
+	                            <!--<li>Actualidad informativa.<br /><a href="http://www.procuraduria.gov.co/portal/?option=net.comtor.cms.frontend.component.pagefactory.NewsComponentPageFactory&action=view-category&category=12" target="_blank">Boletines de prensa</a></li>-->
+	                            <li>Galería de imágenes<br />
+	                            	<div class="swiper-container sw2" >
+								        <div class="swiper-wrapper">
+								        	<div class="swiper-slide" style='background:url(assets/img/galeria/IMG_0020.JPG);'></div>
+								            <div class="swiper-slide" style='background:url(assets/img/galeria/IMG_0818.JPG);'></div>
+								            <div class="swiper-slide" style='background:url(assets/img/galeria/IMG_3667.JPG);'></div>
+								            <div class="swiper-slide" style='background:url(assets/img/galeria/IMG_4083.JPG);'></div>
+								            <div class="swiper-slide" style='background:url(assets/img/galeria/IMG_4160.JPG);'></div>
+								        </div>
+									</div>
+																
+									<div class="swiper-pagination2"></div>	
+	                            </li>
+                            </ul>
+						</div>
+					</li>	
+					<li data-bg="blue1">
+						<a href="#tab01"><div id="tab01" class="acordion-title">Usted tiene qué ver, participe</div></a>						
+						<div class="acordion-content">		
+							<p>Con el apoyo de la <b>Procuraduría General de la Nación</b> se fortalece y garantiza el derecho a la participación ciudadana. Si participamos, prevenimos la corrupción y todos ganamos.  De este criterio surge la estrategia <span>USTED TIENE QUÉ VER: PARTICIPE</span>, proyecto liderado por la Procuraduría General de la Nación que busca generar una alianza entre los servidores públicos y la ciudadanía, para que los mecanismos de participación ciudadana se conviertan en una forma efectiva de control de lo público. Cuando se previenen hechos que puedan afectar el correcto ejercicio de la administración pública, se reduce la distancia entre los ciudadanos y los servidores públicos y se disminuye el riesgo de corrupción.</p>
+							<h2>Comerciales de tv y radio</h2>
+								<div id="comerciales"></div>
+							<h2>¿QUIERES DESCARGAR NUESTROS COLECCIONABLES?</h2> 
+							<ul class="coleccionables">
+								<li><a href="http://procuraduriaapp.com/coleccionable_1.pdf" target="_blank">
+										<img src="assets/img/icon_col_azul.png" class="coleccionable_icon">
+									</a>
+									<a href="http://procuraduriaapp.com/coleccionable_1.pdf" target="_blank" class="coleccionable_titulo">
+										Coleccionable 1: 
+									</a>
+									<p>La procuraduría General de la Nación y la participación ciudadana.</p>
+								</li>
+								<li>
+									<a href="http://procuraduriaapp.com/coleccionable_2.pdf" target="_blank">
+										<img src="assets/img/icon_col_azul.png" class="coleccionable_icon">
+									</a>
+									<a href="http://procuraduriaapp.com/coleccionable_2.pdf" target="_blank" class="coleccionable_titulo">
+										Coleccionable 2: 
+									</a>
+									<p>Democracia y participación: veedurías ciudadanas.</p>
+									</li>
+							</ul>
+						</div>
+					</li>			
+					<li data-bg="blue2">
+						<a href="#tab1"><div id="tab1" class="acordion-title">Su opinión cuenta</div></a>						
+						<div class="acordion-content">		
+							<ul class="topics">
+		                        <li>Obtenga el certificado de antecedentes <br /> <a href="http://www.procuraduria.gov.co/portal/antecedentes.html" target="_blank">Certificado de antecedentes</a></li>
+		                        <li>Consulta de procesos disciplinarios <br /> <a href="http://www.procuraduria.gov.co/portal/index.jsp?option=co.gov.pgn.portal.frontend.component.pagefactory.Correspondencia1ComponentPageFactory"  target="_blank" >Procesos disciplinarios</a></li>
+		                        <li>Realize tus quejas o denuncias<br /><a href="http://www.procuraduria.gov.co/portal/index.jsp?option=co.gov.pgn.portal.frontend.component.pagefactory.QuejasDenunciasComponentPageFactory">Quejas y/o denuncias</a>  </li>
+		                         <li>Escríbanos<br />
+		                        	<div id="contact_form">
+		                        		<p class="error"></p>
+		                        		<p class="success"></p>
+		                        		<input type="text" id="nombre" name="nombre" placeholder="Nombre" >
+		                        		<input type="text" id="email" name="email" placeholder="Email" >
+		                        		<textarea name="content" id="mensaje" placeholder="Ingresa tu queja o denuncia"></textarea>
+		                        		<hr >
+		                        		<button onclick="sendEmail();" class="send_button">Enviar</button>
+		                        	</div>
+		                        </li>
+		                     </ul>
+														
+						</div>
+					</li>
+					<li data-bg="blue2">
+						<a href="#tab2"><div id="tab2" class="acordion-title">La prevención es mejor que la sanción</div></a>
 						<div class="acordion-content" >
 							<p>La Procuraduría General de la Nación, tiene como principio rector la lucha contra la corrupción y la impunidad, que se hace efectiva con el  trabajo de los servidores públicos. </p>
 
@@ -92,7 +166,7 @@
                     
                     <h2>Misión</h2>
                     
-                    <p>Objetivos</p>
+                    <!--<p>Objetivos</p>
 
                     <ul class='topics'>
 <li>Vigilar el cumplimiento de la Constitución, las leyes, las decisiones  judiciales y los actos administrativos.</li>
@@ -104,24 +178,19 @@
 <li class='sub'>Actuaciones preventivas.</li>
 <li class='sub'>Actuaciones de intervención judicial y administrativa.</li>
 <li class='sub'>Procesos disciplinarios.</li>
-<li class='sub'>Siendo referentes de eficiencia, eficacia y valoración ética en el ejercicio de la función pública.</li>
+<li class='sub'>Siendo referentes de eficiencia, eficacia y valoración ética en el ejercicio de la función pública.</li>-->
+					<p>Vigilar el cumplimiento de la Constitución, las leyes, las decisiones judiciales y los actos administrativos; promover y proteger los derechos humanos; defender el interés público y vigilar la conducta oficial de quienes desempeñan funciones públicas; objetivos estos que se logran a través de actuaciones preventivas, de intervención judicial y administrativa y procesos disciplinarios; siendo referentes de eficacia y valoración ética en el ejercicio de la función pública.</p>
                     
                     <h2>Visión</h2>
-<p>Una Procuraduría cercana al ciudadano que:</p>
+                    <p>Una Procuraduría cercana al ciudadano, que protege sus derechos, combate la corrupción y la impunidad, vigila y controla la función de los servidores públicos; en aras de eliminar las causas que dan origen a las actuaciones administrativas improcedentes</p>
+<!--<p>Una Procuraduría cercana al ciudadano que:</p>
 <li>Protege sus derechos.</li>
 <li>Combate la corrupción y la impunidad.</li>
 <li>Vigila y controla la función de los servidores públicos.</li>
-<p>En aras de eliminar las causas que dan origen a las actuaciones administrativas improcedentes.</p>
+<p>En aras de eliminar las causas que dan origen a las actuaciones administrativas improcedentes.</p>-->
 						
 						</div>
 					</li>
-					<li data-bg="blue2">
-						<a href="#tab2"><div id="tab2" class="acordion-title">Usted tiene qué ver, participe</div></a>
-						<div class="acordion-content animated">
-							<p>Con el apoyo de la <b>Procuraduría General de la Nación</b> se fortalece y garantiza el derecho a la participación ciudadana. Si participamos, prevenimos la corrupción y todos ganamos.  De este criterio surge la estrategia <span>USTED TIENE QUÉ VER: PARTICIPE</span>, proyecto liderado por la Procuraduría General de la Nación que busca generar una alianza entre los servidores públicos y la ciudadanía, para que los mecanismos de participación ciudadana se conviertan en una forma efectiva de control de lo público. Cuando se previenen hechos que puedan afectar el correcto ejercicio de la administración pública, se reduce la distancia entre los ciudadanos y los servidores públicos y se disminuye el riesgo de corrupción.</p>
-						</div>
-					</li>
-
 					<li data-bg="blue3">
 						<a href="#tab3"><div class="acordion-title" id="tab3">Funciones de la Procuraduría General de la Nación</div></a>
 						<div  class="acordion-content animated">
@@ -143,8 +212,6 @@
 							</p>
 						</div>
 					</li>	
-
-
 					<li data-bg="blue4">
 						<a href="#tab4"><div id="tab4" class="acordion-title">Modelo de la función preventiva de la Procuraduría General de la Nación</div></a>
 						<div  class="acordion-content animated">
@@ -155,7 +222,6 @@
                     
 						</div>
 					</li>
-					
 					<li data-bg="blue5">
 						<a href="#tab5"><div id="tab5" class="acordion-title">Lineamientos de la función preventiva</div></a>
 						<div  class="acordion-content animated" >
@@ -176,7 +242,6 @@ Se orienta hacia la contribución del éxito de la función pública.</p>
 Se encamina a la generación y análisis de información de la Gestión Pública con el propósito de valorar anticipadamente los riesgos que puedan afectar su cumplimiento.</p>
 						</div>
 					</li>
-					
 					<li data-bg="blue6">
 						<a href="#tab6"><div id="tab6" class="acordion-title">Escenarios y tipos de actuación del modelo de gestión de la función preventiva</div></a>
 						<div class="acordion-content animated">
@@ -209,44 +274,6 @@ Se encamina a la generación y análisis de información de la Gestión Pública
 							<li><b style="color:#008ED4;">Integrar</b><br />Las acciones preventivas de la entidad con los mecanismos de participación ciudadana y control social; las organizaciones sociales, la ciudadanía y la administración pública.</li>
 						</ul>
 					</li>
-					<li data-bg="blue8">
-						<a href="#tab8"><div id="tab8" class="acordion-title">links de interes</div></a>						
-						<div class="acordion-content">		
-							<ul class="topics">
-		                        <li>Obtenga el certificado de antecedentes <br /> <a href="http://www.procuraduria.gov.co/portal/antecedentes.html" target="_blank">Certificado de antecedentes</a></li>
-		                        <li>Consulta de procesos disciplinarios <br /> <a href="http://www.procuraduria.gov.co/portal/index.jsp?option=co.gov.pgn.portal.frontend.component.pagefactory.Correspondencia1ComponentPageFactory"  target="_blank" >Procesos disciplinarios</a></li>
-		                        <li>Quejas o denuncias<br />
-		                        	<div id="contact_form">
-		                        		<p class="error"></p>
-		                        		<p class="success"></p>
-		                        		<input type="text" id="nombre" name="nombre" placeholder="Nombre" >
-		                        		<input type="text" id="email" name="email" placeholder="Email" >
-		                        		<textarea name="content" id="mensaje" placeholder="Ingresa tu queja o denuncia"></textarea>
-		                        		<hr >
-		                        		<button onclick="sendEmail();" class="send_button">Enviar</button>
-		                        	</div>
-		                        </li>
-		                        
-		                     </ul>
-														
-						</div>
-					</li>
-					<li data-bg="blue8">
-						<a href="#tab8"><div id="tab8" class="acordion-title">Para qué vea</div></a>						
-						<div class="acordion-content">		
-							<div class="swiper-container sw2" >
-						        <div class="swiper-wrapper">
-						        	<div class="swiper-slide" style='background:url(assets/img/galeria/IMG_0020.JPG);'></div>
-						            <div class="swiper-slide" style='background:url(assets/img/galeria/IMG_0818.JPG);'></div>
-						            <div class="swiper-slide" style='background:url(assets/img/galeria/IMG_3667.JPG);'></div>
-						            <div class="swiper-slide" style='background:url(assets/img/galeria/IMG_4083.JPG);'></div>
-						            <div class="swiper-slide" style='background:url(assets/img/galeria/IMG_4160.JPG);'></div>
-						        </div>
-							</div>
-														
-							<div class="swiper-pagination2"></div>	
-							<div id="video"></div>
-						</div>
 					</li>
 				</ul>
 				

@@ -90,11 +90,18 @@ $(function(){
  });
 });
 
+setTimeout(loadComerciales,500);
 setTimeout(loadVideos,1000);
 function loadVideos(){
-	$('#video').append('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/n4vlnY0dn4E"></iframe>  </div> <div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3MBH85SWggg"></iframe> </div>');	
+	$('#video').append('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/n4vlnY0dn4E?rel=0"></iframe>  </div>'); 
+	$('#video').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3MBH85SWggg?rel=0"></iframe> </div>');	
 }
 
+function loadComerciales(){
+	$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/d0MJvrvgmd0?rel=0"></iframe>  </div> ');
+	$('#comerciales').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZRJx1KaedX4?rel=0"></iframe> </div>');
+	$('#comerciales').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IrhVj7u5y0c?rel=0"></iframe> </div>');	
+}
 function sendEmail(){
 	$('.error').hide();
 	$('.send_button').hide();
@@ -104,10 +111,6 @@ function sendEmail(){
 	if(validateEmail(ema)){
 		if(nom.length !== 0){
 			if(msj.length !== 0){
-				setTimeout(function(){
-				  $('.send_button').show();
-				}, 1000);
-				
 				/*cordova.plugins.email.open({
 				    to:      'julian.montoya@grupoiris.co',
 				    subject: 'Queja o Reclamo desde ProcuraduriaApp',
@@ -140,7 +143,9 @@ function sendEmail(){
 		$('.error').html("email invalido");
 		$('.error').show();
 	}
-	
+	setTimeout(function(){
+	  $('.send_button').show();
+	}, 1000);
 }
 function validateEmail(email){
 	var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;

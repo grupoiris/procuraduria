@@ -479,8 +479,36 @@ border: 0;
 	color: #333;
 	float: left;
 }
+.coleccionables li{
+	width: 100%;
+	float: left;
+}
+.coleccionables li a{
+	line-height: 17px;
+}
+.coleccionables li p{
+	margin-top: 15px;
+	font-size: 14px;
+	color: #818181;
+	text-align: left;
+}
+.coleccionable_icon{
+	width: auto !important;
+	float: left;
+}
+.coleccionable_titulo{
+	float: left;
+	font-size: 15px;
+	margin-top: 15px;
+	color: #818181;
+	font-weight: bolder;
+}
+
 @media (min-width: 600px){
 	.swiper-container{
 		  height: 400px;
+	}
+	.sw2 .swiper-slide{
+		height:auto !important;
 	}
 }
