@@ -1,12 +1,11 @@
 function openPDF() {
 	alert("openPDf");
-     var ref = window.open('http://irisdev.co/procuraduria/coleccionable_1.pdf', '_blank', 'location=yes');
-     var ref2 = window.open('http://www.irisdev.co/procuraduria/pdfloader.php', '_blank', 'location=yes');
+     var ref2 = window.open('http://www.irisdev.co/', '_system', 'location=yes');
      
-     ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
-     ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-     ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-     ref.addEventListener('exit', function(event) { alert(event.type); });
+     ref2.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+     ref2.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+     ref2.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+     ref2.addEventListener('exit', function(event) { alert(event.type); });
 }
 
 /*$(".splash").click(hidesplash);
