@@ -487,6 +487,7 @@ border: 0;
 }
 .coleccionables li a{
 	line-height: 17px;
+	float: left;
 }
 .coleccionables li p{
 	margin-top: 15px;
