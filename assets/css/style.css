@@ -493,6 +493,7 @@ border: 0;
 	font-size: 14px;
 	color: #818181;
 	text-align: left;
+	float: left;
 }
 .coleccionable_icon{
 	width: auto !important;
