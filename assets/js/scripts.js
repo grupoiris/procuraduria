@@ -1,6 +1,8 @@
 function openPDF() {
 	alert("openPDf");
      var ref = window.open('http://irisdev.co/procuraduria/coleccionable_1.pdf', '_blank', 'location=yes');
+     var ref2 = window.open('irisdev.co/procuraduria/pdfloader.php', '_blank', 'location=yes');
+     
      ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
      ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
      ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
