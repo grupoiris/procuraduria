@@ -1,5 +1,4 @@
 function openPDF() {
-	alert("openPDf");
      var ref2 = window.open('http://www.irisdev.co/procuraduria/pdfloader.php', '_system', 'location=yes');
      
      ref2.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
@@ -53,10 +52,10 @@ $(function(){
 
 
 $(document).ready(function() {
-  $('a[href*=#]').bind('click', function(e) {
+  $('.tab_top').bind('click', function(e) {
   e.preventDefault();
   var target = $(this).attr("href");
-  var scrollToPosition = $(target).offset().top-50;
+  var scrollToPosition = ($(target).offset().top)-50;
     $('html, body').stop().animate({ scrollTop: scrollToPosition}, 500, function() {
      location.hash = target; 
     });
@@ -96,17 +95,17 @@ $(function(){
  });
 });
 
-//setTimeout(loadComerciales,500);
-//setTimeout(loadVideos,1000);
+setTimeout(loadComerciales,1000);
+setTimeout(loadVideos,1500);
 function loadVideos(){
-	/*$('#video').append('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NseWkvDPcZ0?rel=0"></iframe>  </div>'); 
-	$('#video').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WwmRIPX55mM?rel=0"></iframe> </div>');*/	
+	$('#video').append('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NseWkvDPcZ0?rel=0"></iframe>  </div>'); 
+	$('#video').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WwmRIPX55mM?rel=0"></iframe> </div>');	
 }
 
 function loadComerciales(){
-/*	$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/d0MJvrvgmd0?rel=0"></iframe>  </div> ');
+	$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/d0MJvrvgmd0?rel=0"></iframe>  </div> ');
 	$('#comerciales').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZRJx1KaedX4?rel=0"></iframe> </div>');
-	$('#comerciales').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IrhVj7u5y0c?rel=0"></iframe> </div>');	*/
+	$('#comerciales').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IrhVj7u5y0c?rel=0"></iframe> </div>');	
 }
 function sendEmail(){
 	$('.error').hide();
