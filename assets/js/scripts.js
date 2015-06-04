@@ -34,7 +34,7 @@ $(function(){
     
 });
         
-        
+        /*
         $("#redes").toggle(function(){
             $(".icon-left").animate({"opacity": "1","margin":"-35px 0 0 -50px"}, 200);
             $(".icon-center").animate({"opacity": "1","margin":"-55px 0 0 0"}, 400);
@@ -48,7 +48,7 @@ $(function(){
             $(".icon-right").animate({"opacity": "0","margin":"0px"}, 300); 
             $("#redes").addClass('rotate0');
             $("#redes").removeClass('rotate45');  
-        });
+        });*/
 
 
 $(document).ready(function() {
@@ -97,7 +97,7 @@ $(function(){
  });
 });
 
-setTimeout(loadComerciales,1000);
+/*setTimeout(loadComerciales,1000);
 setTimeout(loadVideos,1500);
 function loadVideos(){
 	$('#video').append('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NseWkvDPcZ0?rel=0"></iframe>  </div>'); 
@@ -108,7 +108,7 @@ function loadComerciales(){
 	$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/d0MJvrvgmd0?rel=0"></iframe>  </div> ');
 	$('#comerciales').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZRJx1KaedX4?rel=0"></iframe> </div>');
 	$('#comerciales').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IrhVj7u5y0c?rel=0"></iframe> </div>');	
-}
+}*/
 function sendEmail(){
 	$('.error').hide();
 	$('.send_button').hide();
