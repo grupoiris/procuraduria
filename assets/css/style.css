@@ -165,7 +165,9 @@ header .logo-procuradoria{
   background-image: url("../img/prev.png");
 }
 
+[data-bg='blue0']{ background-color:#069be0; }
 [data-bg='blue1']{ background-color:#008ed4; }
+[data-bg='blue1_1']{ background-color:#0589c6; }
 [data-bg='blue2']{ background-color:#0186C7; }
 [data-bg='blue3']{ background-color:#007FBD; }
 [data-bg='blue4']{ background-color:#0078B3; }
