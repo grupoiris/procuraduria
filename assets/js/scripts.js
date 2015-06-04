@@ -64,7 +64,9 @@ $(document).ready(function() {
  
 });
 
-
+function shareIos(){
+	navigator.share("text","title","plain/text");
+}
 function openPS(img) {
     var pswpElement = document.querySelectorAll('.pswp')[0];
     var items = [{ src: 'assets/img/'+img, w: 1024, h: 1088 }];    
