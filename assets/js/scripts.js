@@ -1,5 +1,5 @@
-function openPDF() {
-     var ref2 = window.open('http://www.irisdev.co/procuraduria/pdfloader.php', '_system', 'location=yes');
+function openPDF(link) {
+     var ref2 = window.open(link, '_system', 'location=yes');
      
      ref2.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
      ref2.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
