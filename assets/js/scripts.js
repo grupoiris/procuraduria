@@ -1,4 +1,6 @@
 function openPDF(link) {
+	$('.loading_wrap').show();
+	
      var ref2 = window.open(link, '_system', 'location=yes');
      
      ref2.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
@@ -34,21 +36,21 @@ $(function(){
     
 });
         
-        /*
-        $("#redes").toggle(function(){
-            $(".icon-left").animate({"opacity": "1","margin":"-35px 0 0 -50px"}, 200);
-            $(".icon-center").animate({"opacity": "1","margin":"-55px 0 0 0"}, 400);
-            $(".icon-right").animate({"opacity": "1","margin":"-35px 0 0 50px"}, 600);
-            $("#redes").removeClass('rotate0');
-            $("#redes").addClass('rotate45'); 
-        },
-          function(){
-            $(".icon-left").animate({"opacity": "0","margin":"0px"}, 300); 
-            $(".icon-center").animate({"opacity": "0","margin":"0px"}, 300); 
-            $(".icon-right").animate({"opacity": "0","margin":"0px"}, 300); 
-            $("#redes").addClass('rotate0');
-            $("#redes").removeClass('rotate45');  
-        });*/
+        
+$("#redes").toggle(function(){
+    $(".icon-left").animate({"opacity": "1","margin":"-35px 0 0 -50px"}, 200);
+    $(".icon-center").animate({"opacity": "1","margin":"-55px 0 0 0"}, 400);
+    $(".icon-right").animate({"opacity": "1","margin":"-35px 0 0 50px"}, 600);
+    $("#redes").removeClass('rotate0');
+    $("#redes").addClass('rotate45'); 
+},
+  function(){
+    $(".icon-left").animate({"opacity": "0","margin":"0px"}, 300); 
+    $(".icon-center").animate({"opacity": "0","margin":"0px"}, 300); 
+    $(".icon-right").animate({"opacity": "0","margin":"0px"}, 300); 
+    $("#redes").addClass('rotate0');
+    $("#redes").removeClass('rotate45');  
+});
 
 
 $(document).ready(function() {
@@ -61,7 +63,9 @@ $(document).ready(function() {
     });
     return false;
  });
- 
+ $('.loading_wrap').click(function(){
+ 	$('.loading_wrap').hide();
+ });
 });
 
 function shareIos(){

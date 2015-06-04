@@ -515,6 +515,21 @@ border: 0;
 	font-weight: bolder;
 }
 
+.loading_wrap{
+	background:rgba(255,255,255,0.5);
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	z-index: 99;
+	max-width: 670px;
+	display: none;
+}
+.loading_gif{
+	width: 100px;
+	margin: auto;
+	margin-top: 45%;
+}
 @media (min-width: 600px){
 	.swiper-container{
 		  height: 400px;
