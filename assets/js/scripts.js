@@ -22,8 +22,6 @@ function hidesplash(){
 $(function(){
     $(".loading").animate({"width": "100%","background": "#015883"}, 2000); 
 
-
-
     var acordion = $('.acordion');
 	if(acordion.length > 0){
 		acordion.find('.acordion-title').click(function(){
@@ -98,8 +96,8 @@ $(function(){
  });
 });
 
-setTimeout(loadComerciales,500);
-setTimeout(loadVideos,1000);
+//setTimeout(loadComerciales,500);
+//setTimeout(loadVideos,1000);
 function loadVideos(){
 	$('#video').append('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NseWkvDPcZ0?rel=0"></iframe>  </div>'); 
 	$('#video').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WwmRIPX55mM?rel=0"></iframe> </div>');	
