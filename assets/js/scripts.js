@@ -71,15 +71,14 @@ $(document).ready(function() {
  	$('.loading_wrap').hide();
  });
  
-	function openFile(){
+});
+function openFile(){
 		alert("a");
 	 	cordova.plugins.fileOpener2.open(
 		    '../coleccionable_2.pdf', 
 		    'application/vnd.android.package-archive'
 		);
 	}
-});
-
 function shareIos(){
 	navigator.share("text","title","plain/text");
 }
