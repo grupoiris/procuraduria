@@ -73,9 +73,10 @@ $(document).ready(function() {
  
 });
 function openFile(){
-		alert("a");
+	console.log("a");
+	alert("a");
 	 	cordova.plugins.fileOpener2.open(
-		    'coleccionable_2.pdf', 
+		    'assets/js/coleccionable_2.pdf', 
 		    'application/pdf',
 		    { 
 	            error : function(errorObj) { 
