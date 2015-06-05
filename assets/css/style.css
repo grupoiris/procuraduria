@@ -314,7 +314,9 @@ footer img{
     overflow: hidden;
     margin-left: -20px;
 }
-
+#redes{
+	position: relative;
+}
 #redes:hover, #redes:active{
     background: transparent;    
 }
