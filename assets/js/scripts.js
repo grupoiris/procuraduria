@@ -75,8 +75,18 @@ $(document).ready(function() {
 function openFile(){
 		alert("a");
 	 	cordova.plugins.fileOpener2.open(
-		    '../coleccionable_2.pdf', 
-		    'application/vnd.android.package-archive'
+		    'coleccionable_2.pdf', 
+		    'application/pdf',
+		    { 
+	            error : function(errorObj) { 
+	                alert('Error status: ' + errorObj.status + ' - Error message: ' + errorObj.message);
+	                console.log('Error status: ' + errorObj.status + ' - Error message: ' + errorObj.message); 
+	            },
+	            success : function () {
+	                alert('file opened successfully');         
+	                console.log('file opened successfully');     
+	            }
+	        }
 		);
 	}
 function shareIos(){
