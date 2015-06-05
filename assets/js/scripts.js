@@ -106,7 +106,11 @@ function openPS(img) {
     gallery.init();
 };
 
-
+jQuery(document).delegate('.external', 'click', function (e) {
+    alert("delegate");
+    window.open(e.target.href, '_system');
+    e.preventDefault();
+});
 
 $(function(){
   var lastScrollTop = 0, delta = 5;

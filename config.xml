@@ -17,7 +17,7 @@
 	
 	<preference name="permissions" value="none"/>
 	
-	<access origin="*"/>
+	<access origin="*"  launch-external="yes"/>
 	
 	<icon src="res/icon/icon.png" />
 	
@@ -55,9 +55,7 @@
 	<gap:splash src="res/screen/screen.png" gap:platform="winphone" />
 	
 	<gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.2" />
-	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.2.4" />
-	
 	<gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" version="1.0.11" />
-
 	<gap:plugin name="nl.madebymark.share" version="0.1.1" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.2.4" />
 </widget>
