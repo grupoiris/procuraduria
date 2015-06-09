@@ -6,7 +6,7 @@
 		version     = "0.1.0" >
 	<!-- versionCode is optional and Android only -->
 	
-	<name>Procuraduria App</name>
+	<name>ProcuraduriaApp</name>
 	<description>
 		Aplicativo de la Procuraduría General de la Nación de Colombia. Donde podrá realizar Quejas , reclamos y contactarse con la entidad. Además de estar al tanto de las campañas y funcionalidades.
 	</description>
