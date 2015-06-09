@@ -507,6 +507,16 @@ border: 0;
 	text-align: left;
 	float: left;
 }
+.image_link_download{
+	float: left;
+	width: 50px;
+}
+.link_download{
+	float: left;
+	width: 75%;
+	margin-top: 5px;
+	margin-left: 10px;
+}
 .coleccionable_icon{
 	width: auto !important;
 	float: left;
@@ -514,9 +524,10 @@ border: 0;
 .coleccionable_titulo{
 	float: left;
 	font-size: 15px;
-	margin-top: 15px;
 	color: #818181;
+	width: 77%;
 	font-weight: bolder;
+	margin-left: 10px;
 }
 
 .loading_wrap{
