@@ -495,6 +495,7 @@ border: 0;
 .coleccionables li a{
 	line-height: 17px;
 	float: left;
+	display: inline-block;
 }
 .coleccionables li a img{
 	width: 35px;
