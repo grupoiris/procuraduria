@@ -514,7 +514,8 @@ border: 0;
 .link_download{
 	float: left;
 	width: 75%;
-	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-top: -5px;
 	margin-left: 10px;
 }
 .coleccionable_icon{
