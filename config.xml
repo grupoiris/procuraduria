@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 	<widget xmlns   = "http://www.w3.org/ns/widgets"
 		xmlns:gap   = "http://phonegap.com/ns/1.0"
-		id          = "com.gruppoiris.procuraduriapp"
-		versionCode = "62" 
-		version     = "0.6.2" >
+		id          = "com.procuraduria.procuraduriapp"
+		versionCode = "01" 
+		version     = "0.1.0" >
 	<!-- versionCode is optional and Android only -->
 	
-	<name>Procuraduria app</name>
+	<name>Procuraduria App</name>
 	<description>
 		Aplicativo de la Procuraduría General de la Nación de Colombia. Donde podrá realizar Quejas , reclamos y contactarse con la entidad. Además de estar al tanto de las campañas y funcionalidades.
 	</description>
-	<author href="https://irisdev.co" email="julia.montoya@grupoiris.co">
-			Theo López
-			Julian Montoya c.
+	<author href="https://irisdev.co" email="pgncolombia@gmail.com">
+			Procuraduría General de la Nación de Colombia
 	</author>
 	
 	<preference name="permissions" value="none"/>
