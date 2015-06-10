@@ -312,9 +312,10 @@ footer img{
     background: none;
     border: 0;
     overflow: hidden;
-    margin-left: -20px;
+    margin-left: 0px;
 }
 #redes{
+	display:inline-block !important;
 	position: relative;
 }
 #redes:hover, #redes:active{
@@ -546,6 +547,43 @@ border: 0;
 	width: 100px;
 	margin: auto;
 	margin-top: 45%;
+}
+.contenido{
+	height:0;
+}
+.download_app{
+	display:none;
+	position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;  
+    background: url(../img/bg-splash.png) top center / 100% 150px,
+                url(../img/logo-procuraduria.png) center bottom / 60px auto;  
+    background-repeat: no-repeat;  
+    background-color: #fff;
+    text-align: center;
+    -webkit-transition: all 1s;
+	 -moz-transition: all 1s;
+	  -ms-transition: all 1s;
+	   -o-transition: all 1s;
+	    transition: all 1s;
+}
+.download_wrapper{
+	width: 35%;
+	margin: auto;
+	margin-top: 60%;
+}
+.download_wrapper a{
+	color: #007FBD;
+	text-align: center;
+	width: 100%;
+}
+.download_wrapper img{
+	width: 100px;
 }
 @media (min-width: 600px){
 	.swiper-container{

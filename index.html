@@ -25,7 +25,16 @@
 <div class="splash animated fadeIn">
 	<div class="loading"></div>
 </div>
-
+<div class="download_app">
+	<div class="download_wrapper">
+		<a href="https://play.google.com/store/apps/details?id=com.procuraduria.procuraduriapp" target="_blank">
+			<img src="assets/img/logo-splash.png" />
+		</a>
+		<a href="https://play.google.com/store/apps/details?id=com.procuraduria.procuraduriapp" target="_blank">
+			Descarga Nuestra nueva app
+		</a>
+	</div>
+</div>
 <div class="contenido">
 
 	<header>
@@ -76,6 +85,35 @@
 	<section class="menu" data-depth="0.5">
 				<ul class="acordion">	
 					<li data-bg="blue0">
+						<a href="#tab1" class="tab_top"><div id="tab1" class="acordion-title">Trámites</div></a>						
+						<div class="acordion-content">		
+							<ul class="topics">
+		                        <li>Obtenga el certificado de antecedentes <br /> 
+		                        	<a href="#" onclick="window.open('http://www.procuraduria.gov.co/portal/antecedentes.html', '_system', 'location=no');" >Certificado de antecedentes</a>
+		                        </li>
+		                        <li>Consulta de procesos disciplinarios <br /> 
+		                        	<a href="#" onclick="window.open('http://www.procuraduria.gov.co/portal/index.jsp?option=co.gov.pgn.portal.frontend.component.pagefactory.Correspondencia1ComponentPageFactory', '_system');" >Procesos disciplinarios</a></li>
+		                        <li>Realice sus quejas o denuncias<br />
+		                        	<a href="#" onclick="window.open('http://www.procuraduria.gov.co/portal/index.jsp?option=co.gov.pgn.portal.frontend.component.pagefactory.QuejasDenunciasComponentPageFactory', '_system');" >Quejas y/o denuncias</a>  </li>
+		                         <li>Escríbanos<br />
+		                        	<div id="contact_form">
+		                        		<p class="error"></p>
+		                        		<p class="success"></p>
+		                        		<label>Nombre</label>
+		                        		<input type="text" id="nombre" name="nombre"  >
+		                        		<label>Email</label>
+		                        		<input type="text" id="email" name="email" >
+		                        		<label>Realice sus quejas o denuncias</label>
+		                        		<textarea name="content" id="mensaje" ></textarea>
+		                        		<hr >
+		                        		<button onclick="sendEmail();" class="send_button">Enviar</button>
+		                        	</div>
+		                        </li>
+		                     </ul>
+														
+						</div>
+					</li>
+					<li data-bg="blue1">
 						<a href="#tab0" class="tab_top"><div id="tab0" class="acordion-title">¡La Procuraduría en acción!</div></a>						
 						<div class="acordion-content">		
 							<ul class='topics'>
@@ -142,7 +180,7 @@
                             </ul>
 						</div>
 					</li>	
-					<li data-bg="blue1">
+					<li data-bg="blue1_1">
 						<a href="#tab01" class="tab_top"><div id="tab01" class="acordion-title">Usted tiene qué ver, participe</div></a>						
 						<div class="acordion-content">		
 							<p>Con el apoyo de la <b>Procuraduría General de la Nación</b> se fortalece y garantiza el derecho a la participación ciudadana. Si participamos, prevenimos la corrupción y todos ganamos.  De este criterio surge la estrategia <span>USTED TIENE QUÉ VER: PARTICIPE</span>, proyecto liderado por la Procuraduría General de la Nación que busca generar una alianza entre los servidores públicos y la ciudadanía, para que los mecanismos de participación ciudadana se conviertan en una forma efectiva de control de lo público. Cuando se previenen hechos que puedan afectar el correcto ejercicio de la administración pública, se reduce la distancia entre los ciudadanos y los servidores públicos y se disminuye el riesgo de corrupción.</p>
@@ -201,35 +239,9 @@
 							-->
 						</div>
 					</li>			
-					<li data-bg="blue1_1">
-						<a href="#tab1" class="tab_top"><div id="tab1" class="acordion-title">Trámites</div></a>						
-						<div class="acordion-content">		
-							<ul class="topics">
-		                        <li>Obtenga el certificado de antecedentes <br /> 
-		                        	<a href="#" onclick="window.open('http://www.procuraduria.gov.co/portal/antecedentes.html', '_system', 'location=no');" >Certificado de antecedentes</a>
-		                        </li>
-		                        <li>Consulta de procesos disciplinarios <br /> 
-		                        	<a href="#" onclick="window.open('http://www.procuraduria.gov.co/portal/index.jsp?option=co.gov.pgn.portal.frontend.component.pagefactory.Correspondencia1ComponentPageFactory', '_system');" >Procesos disciplinarios</a></li>
-		                        <li>Realice sus quejas o denuncias<br />
-		                        	<a href="#" onclick="window.open('http://www.procuraduria.gov.co/portal/index.jsp?option=co.gov.pgn.portal.frontend.component.pagefactory.QuejasDenunciasComponentPageFactory', '_system');" >Quejas y/o denuncias</a>  </li>
-		                         <li>Escríbanos<br />
-		                        	<div id="contact_form">
-		                        		<p class="error"></p>
-		                        		<p class="success"></p>
-		                        		<label>Nombre</label>
-		                        		<input type="text" id="nombre" name="nombre"  >
-		                        		<label>Email</label>
-		                        		<input type="text" id="email" name="email" >
-		                        		<label>Realice sus quejas o denuncias</label>
-		                        		<textarea name="content" id="mensaje" ></textarea>
-		                        		<hr >
-		                        		<button onclick="sendEmail();" class="send_button">Enviar</button>
-		                        	</div>
-		                        </li>
-		                     </ul>
-														
-						</div>
-					</li>
+					
+					
+					
 					<li data-bg="blue2">
 						<a href="#tab2" class="tab_top"><div id="tab2" class="acordion-title">La prevención es mejor que la sanción</div></a>
 						<div class="acordion-content" >
@@ -354,18 +366,15 @@ Se encamina a la generación y análisis de información de la Gestión Pública
 	<footer> 
 	<center>      
         <a class="icon-left" onclick="openShare('tw');" href="javascript:void(0);"><img src="assets/img/twitter.png"></a>
-
-<script>
-	window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-</script>
-
-
-<a href="javascript:void(0);" class="icon-center" onclick="openShare('fb')">
-<img src="assets/img/facebook.png">
-</a>
-
+		<script>
+			window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+		</script>
+		
+		<a href="javascript:void(0);" class="icon-center" onclick="openShare('fb')">
+			<img src="assets/img/facebook.png">
+		</a>
         <a class="icon-right" href="https://www.youtube.com/user/PGNCUENTAOFICIAL"><img src="assets/img/youtube.png"></a>
-        <img src="assets/img/mas.png" id="redes" rel="" title="">
+        <img src="assets/img/mas.png" id="redes" onclick="AbrirRedes();">
      </center> 
 	</footer>
 		

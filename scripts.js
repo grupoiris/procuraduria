@@ -1,7 +1,6 @@
-function openPDF(link) {
-	$('.loading_wrap').show();
-	
-     var ref2 = window.open(link, '_system', 'location=yes');
+function openPDF() {
+	alert("openPDf");
+     var ref2 = window.open('http://www.irisdev.co/procuraduria/pdfloader.php', '_system', 'location=yes');
      
      ref2.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
      ref2.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
@@ -9,16 +8,12 @@ function openPDF(link) {
      ref2.addEventListener('exit', function(event) { alert(event.type); });
 }
 
-$(".splash").click(hidesplash);
-setTimeout(hidesplash,2500);
+/*$(".splash").click(hidesplash);
+setTimeout(hidesplash,2500);*/
 function hidesplash(){
     $(".splash").removeClass("fadeIn"); 
-	$(".splash").addClass("fadeOut");
-    setTimeout(function(){
-    	$(".splash").hide();
-    	//$(".download_app").show();
-    	},1000);
-    $(".contenido").show();
+    $(".splash").addClass("fadeOut");
+    setTimeout(function(){$(".splash").hide();},1000);
     $(".contenido").css("height","auto");
     $(".swiper-button-next").addClass("fadeInLeft");
     $(".swiper-button-prev").addClass("fadeInRight");
@@ -26,6 +21,8 @@ function hidesplash(){
 
 $(function(){
     $(".loading").animate({"width": "100%","background": "#015883"}, 2000); 
+
+
 
     var acordion = $('.acordion');
 	if(acordion.length > 0){
@@ -39,58 +36,38 @@ $(function(){
 	}
     
 });
-function AbrirRedes(){
-    $(".icon-left").animate({"opacity": "1","margin":"-35px 0 0 -50px"}, 200);
-    $(".icon-center").animate({"opacity": "1","margin":"-55px 0 0 0"}, 400);
-    $(".icon-right").animate({"opacity": "1","margin":"-35px 0 0 50px"}, 600);
-    $("#redes").removeClass('rotate0');
-    $("#redes").addClass('rotate45'); 
-    $("#redes").attr("onclick","cerrarredes();");
-}
-function cerrarredes(){
-    $(".icon-left").animate({"opacity": "0","margin":"0px"}, 300); 
-    $(".icon-center").animate({"opacity": "0","margin":"0px"}, 300); 
-    $(".icon-right").animate({"opacity": "0","margin":"0px"}, 300); 
-    $("#redes").addClass('rotate0');
-    $("#redes").removeClass('rotate45');
-    $("#redes").attr("onclick","AbrirRedes();");  
-}
+        
+        
+        $("#redes").toggle(function(){
+            $(".icon-left").animate({"opacity": "1","margin":"-35px 0 0 -50px"}, 200);
+            $(".icon-center").animate({"opacity": "1","margin":"-55px 0 0 0"}, 400);
+            $(".icon-right").animate({"opacity": "1","margin":"-35px 0 0 50px"}, 600);
+            $("#redes").removeClass('rotate0');
+            $("#redes").addClass('rotate45'); 
+        },
+          function(){
+            $(".icon-left").animate({"opacity": "0","margin":"0px"}, 300); 
+            $(".icon-center").animate({"opacity": "0","margin":"0px"}, 300); 
+            $(".icon-right").animate({"opacity": "0","margin":"0px"}, 300); 
+            $("#redes").addClass('rotate0');
+            $("#redes").removeClass('rotate45');  
+        });
 
 
 $(document).ready(function() {
-  $('.tab_top').bind('click', function(e) {
+  $('a[href*=#]').bind('click', function(e) {
   e.preventDefault();
   var target = $(this).attr("href");
-  var scrollToPosition = ($(target).offset().top)-50;
+  var scrollToPosition = $(target).offset().top-50;
     $('html, body').stop().animate({ scrollTop: scrollToPosition}, 500, function() {
      location.hash = target; 
     });
     return false;
  });
- $('.loading_wrap').click(function(){
- 	$('.loading_wrap').hide();
- });
  
 });
-function openFile(){
- 	cordova.plugins.fileOpener2.open(
-	    'assets/js/coleccionable_2.pdf', 
-	    'application/pdf',
-	    { 
-            error : function(errorObj) { 
-                alert('Error status: ' + errorObj.status + ' - Error message: ' + errorObj.message);
-                console.log('Error status: ' + errorObj.status + ' - Error message: ' + errorObj.message); 
-            },
-            success : function () {
-                alert('file opened successfully');         
-                console.log('file opened successfully');     
-            }
-        }
-	);
-}
-function shareIos(){
-	navigator.share("text","title","plain/text");
-}
+
+
 function openPS(img) {
     var pswpElement = document.querySelectorAll('.pswp')[0];
     var items = [{ src: 'assets/img/'+img, w: 1024, h: 1088 }];    
@@ -104,10 +81,7 @@ function openPS(img) {
     gallery.init();
 };
 
-jQuery(document).delegate('.external', 'click', function (e) {
-    window.open(e.target.href, '_system');
-    e.preventDefault();
-});
+
 
 $(function(){
   var lastScrollTop = 0, delta = 5;
@@ -124,8 +98,8 @@ $(function(){
  });
 });
 
-setTimeout(loadComerciales,1000);
-setTimeout(loadVideos,1500);
+setTimeout(loadComerciales,500);
+setTimeout(loadVideos,1000);
 function loadVideos(){
 	$('#video').append('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NseWkvDPcZ0?rel=0"></iframe>  </div>'); 
 	$('#video').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WwmRIPX55mM?rel=0"></iframe> </div>');	
