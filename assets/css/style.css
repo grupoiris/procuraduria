@@ -575,12 +575,14 @@ border: 0;
 .download_wrapper{
 	width: 35%;
 	margin: auto;
-	margin-top: 60%;
+	margin-top: 55%;
 }
 .download_wrapper a{
 	color: #007FBD;
 	text-align: center;
 	width: 100%;
+	margin-top: 20px;
+	float: left;
 }
 .download_wrapper img{
 	width: 100px;

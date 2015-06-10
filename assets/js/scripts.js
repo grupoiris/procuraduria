@@ -13,13 +13,13 @@ $(".splash").click(hidesplash);
 setTimeout(hidesplash,2500);
 function hidesplash(){
     $(".splash").removeClass("fadeIn"); 
-	$(".splash").addClass("fadeOut");
+	//$(".splash").addClass("fadeOut");
     setTimeout(function(){
-    	$(".splash").hide();
-    	//$(".download_app").show();
+    	//$(".splash").hide();
+    	$(".download_app").show();
     	},1000);
-    $(".contenido").show();
-    $(".contenido").css("height","auto");
+    //$(".contenido").show();
+    //$(".contenido").css("height","auto");
     $(".swiper-button-next").addClass("fadeInLeft");
     $(".swiper-button-prev").addClass("fadeInRight");
 }
