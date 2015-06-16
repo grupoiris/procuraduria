@@ -27,17 +27,6 @@ function hidesplash(){
 $(function(){
     $(".loading").animate({"width": "100%","background": "#015883"}, 2000); 
 
-    var acordion = $('.acordion');
-	if(acordion.length > 0){
-		acordion.find('.acordion-title').click(function(){
-			var elm = $(this), 
-			padre = elm.parents('li'),
-			conts = elm.parents('.acordion').find('li').not(padre);
-			padre.toggleClass('activo');
-			conts.removeClass('activo');			
-		});
-	}
-    
 });
 function AbrirRedes(){
     $(".icon-left").animate({"opacity": "1","margin":"-35px 0 0 -50px"}, 200);
@@ -72,22 +61,6 @@ $(document).ready(function() {
  });
  
 });
-function openFile(){
- 	cordova.plugins.fileOpener2.open(
-	    'assets/js/coleccionable_2.pdf', 
-	    'application/pdf',
-	    { 
-            error : function(errorObj) { 
-                alert('Error status: ' + errorObj.status + ' - Error message: ' + errorObj.message);
-                console.log('Error status: ' + errorObj.status + ' - Error message: ' + errorObj.message); 
-            },
-            success : function () {
-                alert('file opened successfully');         
-                console.log('file opened successfully');     
-            }
-        }
-	);
-}
 function shareIos(){
 	navigator.share("text","title","plain/text");
 }
@@ -117,25 +90,13 @@ $(function(){
   if (nowScrollTop > lastScrollTop){
     $("footer").slideUp();
   } else { 
-    $("footer").slideDown();
+  	cerrarredes();
+  	$("footer").slideDown();
   }
  lastScrollTop = nowScrollTop;
  }
  });
 });
-
-setTimeout(loadComerciales,1000);
-setTimeout(loadVideos,1500);
-function loadVideos(){
-	$('#video').append('<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NseWkvDPcZ0?rel=0"></iframe>  </div>'); 
-	$('#video').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WwmRIPX55mM?rel=0"></iframe> </div>');	
-}
-
-function loadComerciales(){
-	$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/d0MJvrvgmd0?rel=0"></iframe>  </div> ');
-	$('#comerciales').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZRJx1KaedX4?rel=0"></iframe> </div>');
-	$('#comerciales').append('<div class="embed-responsive embed-responsive-16by9">  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IrhVj7u5y0c?rel=0"></iframe> </div>');	
-}
 function sendEmail(){
 	$('.error').hide();
 	$('.send_button').hide();
@@ -184,4 +145,47 @@ function sendEmail(){
 function validateEmail(email){
 	var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	return regex.test(email);
+}
+function openShare(type){
+	var section = window.location.hash;
+	switch(section){
+		case '#tab1':
+			url = 'http://www.facebook.com/sharer.php?s=100&u=http://irisdev.co/procuraduria/shares/prevencion.html';
+			url_tw = 'https://twitter.com/intent/tweet/?text=Si participamos, prevenimos la corrupción y todos ganamos.  De este criterio surge la estrategia, USTED TIENE QUE VER PARTICIPE&via=pgn_col';
+		break;
+		case '#tab2':
+			url = 'http://www.facebook.com/sharer.php?s=100&u=http://irisdev.co/procuraduria/shares/participe.html';
+			url_tw = 'https://twitter.com/intent/tweet/?text=La Procuraduría General de la Nación, tiene como principio rector la lucha contra la corrupción y la impunidad.&via=pgn_col';
+		break;
+		case '#tab3':
+			url = 'http://www.facebook.com/sharer.php?s=100&u=http://irisdev.co/procuraduria/shares/funciones.html';
+			url_tw = 'https://twitter.com/intent/tweet/?text=Preventiva: Está orientada a anticipar y evitar la ocurrencia de hechos que afecten los derechos de las personas&via=pgn_col';
+		break;
+		case '#tab4':
+			url = 'http://www.facebook.com/sharer.php?s=100&u=http://irisdev.co/procuraduria/shares/modelo.html';
+			url_tw = 'https://twitter.com/intent/tweet/?text=Detección y advertencia de riesgos en la gestión pública. Promueve el respeto de las garantías de los derechos constitucionales.&via=pgn_col';
+		break;
+		case '#tab5':
+			url = 'http://www.facebook.com/sharer.php?s=100&u=http://irisdev.co/procuraduria/shares/lineamientos.html';
+			url_tw = 'https://twitter.com/intent/tweet/?text=Focalización en la garantía de los derechos.Se concentra en asegurar que se respeten los derechos de las personas.&via=pgn_col';
+		break;
+		case '#tab6':
+			url = 'http://www.facebook.com/sharer.php?s=100&u=http://irisdev.co/procuraduria/shares/actuacion.html';
+			url_tw = 'https://twitter.com/intent/tweet/?text=Los escenarios y tipos de actuación explican cómo se debe actuar preventivamente en la Procuraduría General de la Nación&via=pgn_col';
+		break;
+		case '#tab7':
+			url = 'http://www.facebook.com/sharer.php?s=100&u=http://irisdev.co/procuraduria/shares/participacion.html';
+			url_tw = 'https://twitter.com/intent/tweet/?text=La participación es eje de la democracia y la garantía de hacer parte de las decisiones que nos afectan.&via=pgn_col';
+		break;
+		default:
+			url = 'http://www.facebook.com/sharer.php?s=100&u=http://irisdev.co/procuraduria/shares/general.html';
+			url_tw = 'https://twitter.com/intent/tweet/?text=Usted tiene que ver, participe. www.procuraduriaapp.com&via=pgn_col';
+		break;
+	}
+	if(type == 'fb'){
+		var win = window.open(url, '_blank');
+	}else{
+		var win = window.open(url_tw, '_blank');
+	}
+	win.focus();
 }
