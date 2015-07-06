@@ -28,7 +28,6 @@ function getContentToWs(){
 clave_api = "AIzaSyCzTmI_-_rNXxo4iKfSOSPuvQkZHkAHDFo";
 
 function loadComerciales(){
-	console.log(arrayComerciales);
 	for (var i=0; i<arrayComerciales.length; i++) {
 		$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" src="'+arrayComerciales[i]+'"></iframe>  </div>');
 	}
@@ -57,7 +56,6 @@ function getVids(pid){
         function(data) {
             var results = '';
             $.each( data.items, function( i, item ) {
-            	console.log(item.snippet.resourceId.videoId);
             	results += '<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'+item.snippet.resourceId.videoId+'?rel=0"></iframe></div>';
             });
             $('#video').html(results);
