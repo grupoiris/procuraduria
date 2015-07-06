@@ -13,16 +13,13 @@ function getContentToWs(){
 	      }
 	});  
 	
-	/*Emulate Array to galery home*/
+	/*
 	arrayGalleryHome = ['procuraduria4.jpg','slider1.jpg','procurador.jpg','slider2.jpg','bandera.png','slider3.jpg','afiche.jpg'];
 	
-	/*Emulate Array to galery interna*/
 	arrayGalleryInterna = ['galeria8.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg',
 							'11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','IMG_0020.JPG','IMG_0818.JPG','IMG_3667.JPG','IMG_4083.JPG','IMG_4160.JPG'];
-	
-	/*Emulate Array to galery interna*/
+	*/
 	arrayComerciales = ['https://www.youtube.com/embed/d0MJvrvgmd0?rel=0','https://www.youtube.com/embed/ZRJx1KaedX4?rel=0"','https://www.youtube.com/embed/IrhVj7u5y0c?rel=0'];
-	
 	
     loadGaleriaHome();
 }
@@ -31,6 +28,7 @@ function getContentToWs(){
 clave_api = "AIzaSyCzTmI_-_rNXxo4iKfSOSPuvQkZHkAHDFo";
 
 function loadComerciales(){
+	console.log(arrayComerciales);
 	for (var i=0; i<arrayComerciales.length; i++) {
 		$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" src="'+arrayComerciales[i]+'"></iframe>  </div>');
 	}
@@ -53,12 +51,13 @@ function getVids(pid){
     $.get(
         "https://www.googleapis.com/youtube/v3/playlistItems",{
         part : 'snippet', 
-        maxResults : 2,
+        maxResults : 3,
         playlistId : pid,
         key: clave_api},
         function(data) {
             var results = '';
             $.each( data.items, function( i, item ) {
+            	console.log(item.snippet.resourceId.videoId);
             	results += '<div  class="embed-responsive embed-responsive-16by9">   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'+item.snippet.resourceId.videoId+'?rel=0"></iframe></div>';
             });
             $('#video').html(results);
@@ -199,7 +198,7 @@ function loadContent(content_to_load){
 				$('.content_'+content_to_load).append('<div id="video"></div>');
 				setTimeout(function(){ loadLastVideos();}, 1000);
 			}
-			if(content.videos.id=="2"){
+			else if(content.videos.id=="2"){
 				$('.content_'+content_to_load).append('<h2>Mensajes institucionales de televisión, videos y mensaje radial</h2>');
 				$('.content_'+content_to_load).append('<div id="comerciales"></div>');
 				loadComerciales();	
