@@ -12,6 +12,16 @@ function getContentToWs(){
 			getMenu();
 	      }
 	});  
+	$.ajax({
+        url:'http://procuraduriaapp.com/admin/dist/funciones.php',
+	     data: {action: 'getPrintGalleryInfo',gallery_id: '7'},
+	     type: 'post',
+	     success: function(output) {
+			arrayGalleryHome_re = jQuery.parseJSON(output);
+			arrayGalleryHome = jQuery.parseJSON(arrayGalleryHome_re);
+			loadGaleriaHome();
+	      }
+	}); 
 	
 	/*
 	arrayGalleryHome = ['procuraduria4.jpg','slider1.jpg','procurador.jpg','slider2.jpg','bandera.png','slider3.jpg','afiche.jpg'];
@@ -21,7 +31,6 @@ function getContentToWs(){
 	*/
 	arrayComerciales = ['https://www.youtube.com/embed/d0MJvrvgmd0?rel=0','https://www.youtube.com/embed/ZRJx1KaedX4?rel=0"','https://www.youtube.com/embed/IrhVj7u5y0c?rel=0'];
 	
-    loadGaleriaHome();
 }
 
 //YOUTUBE API
@@ -74,7 +83,7 @@ function loadColeccionables(){
 function loadGaleriaHome(){
 	var html_galeria  = '<div class="swiper-wrapper">';
 	for (var i=0; i<arrayGalleryHome.length; i++) {
-		 html_galeria += '<div class="swiper-slide" style="background:url(http://procuraduriaapp.com/ws/galeria/home/'+arrayGalleryHome[i]+');"></div>';
+		 html_galeria += '<div class="swiper-slide" style="background:url(http://procuraduriaapp.com/ws/galeria/home/'+arrayGalleryHome[i].img+');"></div>';
 	}
     html_galeria += '</div>';
     
