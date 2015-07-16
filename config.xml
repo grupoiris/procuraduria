@@ -2,8 +2,8 @@
 	<widget xmlns   = "http://www.w3.org/ns/widgets"
 		xmlns:gap   = "http://phonegap.com/ns/1.0"
 		id          = "com.procuraduria.procuraduriapp"
-		versionCode = "03" 
-		version     = "0.1.2" >
+		versionCode = "04" 
+		version     = "0.1.4" >
 	<!-- versionCode is optional and Android only -->
 	
 	<name>Procuraduria App</name>
@@ -18,7 +18,7 @@
 	
 	<access origin="*"  launch-external="yes"/>
 	
-	<icon src="res/icon/icon.png" />
+	<icon src="res/icon/icon.png" /> 
 	
 	<icon src="res/icon/icon.png" gap:platform="android" gap:density="ldpi" />
 	<icon src="res/icon/icon.png" gap:platform="android" gap:density="mdpi" />
