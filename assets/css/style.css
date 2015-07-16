@@ -99,11 +99,13 @@ header .logo-procuradoria{
 
     .swiper-container {
         width: 100%;
-       height: 280px;
+       height: 200px;
         background: #fff;  
         z-index: 0 !important;      
     }
-
+	.swiper-container-horizontal>.swiper-pagination{
+		margin-top: -10px;
+	}
 
     .swiper-slide {
         width: inherit !important;
@@ -123,6 +125,7 @@ header .logo-procuradoria{
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+        background-repeat: no-repeat;
     }
 	.sw2 .swiper-slide{
 		width: 100% !important;
