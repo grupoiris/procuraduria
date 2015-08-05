@@ -167,7 +167,7 @@ header .logo-procuradoria{
 .swiper-button-prev {
   background-image: url("../img/prev.png");
 }
-
+[data-bg='yellow']{ background-color:#ffb400; }
 [data-bg='blue0']{ background-color:#069be0; }
 [data-bg='blue1']{ background-color:#008ed4; }
 [data-bg='blue2']{ background-color:#0186C7; }
@@ -178,6 +178,21 @@ header .logo-procuradoria{
 [data-bg='blue7']{ background-color:#01608F; }
 [data-bg='blue8']{ background-color:#015883; }
 
+[data-bg='yellow'] .acordion-title{
+	 margin-left: 15px;
+	text-transform: inherit;
+	padding: 10px 20px 10px 30px;
+	cursor: pointer;
+	background: url(../img/option.png)no-repeat;
+    background-size: 20px;
+    background-position: left center;
+    color:#fff;
+    font-weight: bold;
+    font-size: 13px;
+}
+[data-bg='yellow'] .activo .acordion-title , [data-bg='yellow'] .acordion-title:hover{
+	background-image:  url(../img/open-option.png);
+}
 
 /* Start acordion */
 .acordion{
@@ -194,7 +209,7 @@ header .logo-procuradoria{
 	text-transform: inherit;
 	padding: 10px 20px 10px 30px;
 	cursor: pointer;
-	background: url(../img/option.png)no-repeat;
+	background: url(../img/option2.png)no-repeat;
     background-size: 20px;
     background-position: left center;
     color:#fff;
@@ -203,7 +218,7 @@ header .logo-procuradoria{
 }
 .activo .acordion-title,
 .acordion-title:hover{
-	background-image:  url(../img/open-option.png);
+	background-image:  url(../img/open-option2.png);
 }
 .acordion-content{
     background: #fff;
@@ -264,7 +279,7 @@ header .logo-procuradoria{
 }
 
 .acordion h2{
-	color:#008ED4;
+	color:#ed1d25;
     margin-bottom: 12px;
     font-size: 20px;
     padding: 4px 0;
@@ -526,18 +541,20 @@ border: 0;
 	margin-left: 10px;
 }
 .coleccionable_icon{
-	width: auto !important;
+	width: 35px !important;
 	float: left;
 }
 .coleccionable_titulo{
 	float: left;
 	font-size: 15px;
 	color: #818181;
-	width: 77%;
 	font-weight: bolder;
-	margin-left: 10px;
+	margin-top: 5px;
 }
-
+.coleccionable_descript{
+	float: left;
+	margin-top: 10px;
+}
 .loading_wrap{
 	background:rgba(255,255,255,0.5);
 	position:absolute;

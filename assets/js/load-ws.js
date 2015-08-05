@@ -22,7 +22,14 @@ function getContentToWs(){
 			loadGaleriaHome();
 	      }
 	}); 
-	
+	$.ajax({
+        url:'http://procuraduriaapp.com/admin/dist/funciones.php',
+	     data: {action: 'getDocuments'},
+	     type: 'post',
+	     success: function(output) {
+			arrayToDocuments = jQuery.parseJSON(output);
+	      }
+	});  
 	/*
 	arrayGalleryHome = ['procuraduria4.jpg','slider1.jpg','procurador.jpg','slider2.jpg','bandera.png','slider3.jpg','afiche.jpg'];
 	
@@ -91,9 +98,9 @@ function loadGaleriaHome(){
     html_galeria += '<div class="swiper-button-next animated"></div>';
     html_galeria += '<div class="swiper-button-prev animated "></div>';
 	
-	 $('.sw1').html(html_galeria);
+	 $('.sw_home').html(html_galeria);
 	 setTimeout(function(){ 
-	 	var swiper = new Swiper('.sw1', {
+	 	var swiper = new Swiper('.sw_home', {
 	        pagination: '.swiper-pagination',
 	        paginationClickable: true,
 	        spaceBetween: 30,
@@ -140,7 +147,11 @@ function getMenu(){
 		content = arrayToContents[i];
 		content_title = content.title;
 		if(i<=8){	color= i;	}else{	color=8;	}
-		menu_html = menu_html+'<li data-bg="blue'+color+'"><a href="#tab1" class="tab_top" onclick="loadContent(\''+content.name+'\')";><div id="tab1" class="acordion-title">'+content_title+'</div></a><div class="acordion-content content_'+content.name+'" ></div></li>';
+		if (content.id === "42"){
+			menu_html = menu_html+'<li data-bg="yellow"><a href="#tab1" class="tab_top" onclick="loadContent(\''+content.name+'\')";><div id="tab1" class="acordion-title">'+content_title+'</div></a><div class="acordion-content content_'+content.name+'" ></div></li>';	
+		}else{
+			menu_html = menu_html+'<li data-bg="blue'+color+'"><a href="#tab1" class="tab_top" onclick="loadContent(\''+content.name+'\')";><div id="tab1" class="acordion-title">'+content_title+'</div></a><div class="acordion-content content_'+content.name+'" ></div></li>';
+		}
 	}
 	$('.acordion').html(menu_html);
 	
@@ -170,21 +181,20 @@ function fixedEncodeURIComponent (str) {
 function loadContent(content_to_load){
 	$('.content_'+content_to_load).html("cargando..");
 	if(content_to_load){
+		$('.content_'+content_to_load).html('');
 		content = getContent(content_to_load);
-		if(content){
-			$('.content_'+content_to_load).html(decode_utf8(content.content_html));
-		}
+		//Impresion de galerias
 		if(content.imagenes.length!=0){
 			array_ima = $.parseJSON(content.imagenes.urls);
 			html_galleryImages = '';
 			$.each(array_ima, function (index, value) {
 				html_galleryImages += '<div class="swiper-slide" style="background:url(http://procuraduriaapp.com/ws/galeria/uploads/'+value.img+');"></div>';
 			});
-			$('.content_'+content_to_load).append('<h2>'+content.imagenes.nombre+'</h2>');
-			$('.content_'+content_to_load).append('<div class="swiper-container sw1"><div class="swiper-wrapper">'+html_galleryImages);
+			//$('.content_'+content_to_load).append('<h2>'+content.imagenes.nombre+'</h2>');
+			$('.content_'+content_to_load).append('<div class="swiper-container sw'+content.id+'"><div class="swiper-wrapper">'+html_galleryImages);
 			$('.content_'+content_to_load).append('</div><div class="swiper-pagination"></div><div class="swiper-button-next animated"></div><div class="swiper-button-prev animated "></div></div>');
 		    setTimeout(function(){ 
-		    	var swiper = new Swiper('.sw1', {
+		    	var swiper = new Swiper('.sw'+content.id, {
 			        pagination: '.swiper-pagination',
 			        paginationClickable: true,
 			        spaceBetween: 30,
@@ -199,6 +209,13 @@ function loadContent(content_to_load){
 			    });
 		    }, 1000);
 		}
+		
+		//Impresion de contenido
+		if(content){
+			$('.content_'+content_to_load).append(decode_utf8(content.content_html));
+		}
+		
+		//Impresion de videos
 		if(content.videos.length!=0){
 			if(content.videos.id=="1"){
 				$('.content_'+content_to_load).append('<h2>La Procuradurí­a al aire</h2>');
@@ -214,13 +231,33 @@ function loadContent(content_to_load){
 				$('.content_'+content_to_load).append('<div id="video"><iframe width="100%" height="350" src="'+content.videos.urls+'" frameborder="0" allowfullscreen></iframe></div>');
 			}
 		}
+		
+		//Impresion de documentos
 		if(content.documentos.length!=0){
-			$('.content_'+content_to_load).append('<h2>'+content.documentos.nombre+'</h2>');
-			$('.content_'+content_to_load).append('<p>'+content.documentos.descripcion+'</p>');
-			var url_doc = 'http://procuraduriaapp.com/ws/documentos/'+content.documentos.url;
-			button_html  = '<a href="'+content.documentos.url+'" target="_blank"><img src="assets/img/icon_col_azul.png" class="coleccionable_icon"></a>';
-			button_html += '<a href="#!" onclick="window.open(\''+url_doc+'\', \'_system\', \'location=no\');" class="coleccionable_titulo">'+content.documentos.titulo+'</a>';
-			$('.content_'+content_to_load).append(button_html);
+			if(content.documentos.tipo == "coleccionables"){
+				$('.content_'+content_to_load).append('<h2>'+content.documentos.titulo+'</h2>');
+				for (var k=0; k<arrayToDocuments.length; k++) {
+					doc = arrayToDocuments[k];
+					if(doc.tipo === "coleccionable"){
+						var generate_html = '<div style="float:left;width:100%;">';
+						var url_doc = 'http://procuraduriaapp.com/ws/documentos/'+doc.url;
+						button_html =  '<div style="float:left;width:40px"><a href="#!" onclick="window.open(\''+url_doc+'\', \'_system\', \'location=no\');" target="_blank"><img src="assets/img/icon_col_azul.png" class="coleccionable_icon"></a></div>';
+						button_html += '<div style="float:left;width:80%;"><a href="#!" onclick="window.open(\''+url_doc+'\', \'_system\', \'location=no\');" class="coleccionable_titulo">'+doc.titulo+'</a>';
+						button_html += '<p class="coleccionable_descript">'+doc.descripcion+'</p></div>';
+							generate_html += button_html;
+							generate_html += '</div>';
+						$('.content_'+content_to_load).append(generate_html);
+					}
+				}
+			}				
+			else{
+				$('.content_'+content_to_load).append('<h2>'+content.documentos.nombre+'</h2>');
+				$('.content_'+content_to_load).append('<p>'+content.documentos.descripcion+'</p>');
+				var url_doc = 'http://procuraduriaapp.com/ws/documentos/'+content.documentos.url;
+				button_html  = '<a href="'+content.documentos.url+'" target="_blank"><img src="assets/img/icon_col_azul.png" class="coleccionable_icon"></a>';
+				button_html += '<a href="#!" onclick="window.open(\''+url_doc+'\', \'_system\', \'location=no\');" class="coleccionable_titulo">'+content.documentos.titulo+'</a>';
+				$('.content_'+content_to_load).append(button_html);
+			}
 		}
 		if(content.name==='tramites'){
 			formulario_html = '<ul class="topics" ><li>Escríbanos<br /><div id="contact_form"><p class="error"></p><p class="success"></p><label>Nombre</label><input type="text" id="nombre" name="nombre"  ><label>Email</label><input type="text" id="email" name="email" ><label>Realice sus quejas o denuncias</label><textarea name="content" id="mensaje" ></textarea><hr ><button onclick="sendEmail();" class="send_button">Enviar</button></div></li></ul>';
@@ -229,12 +266,6 @@ function loadContent(content_to_load){
 	}else{
 		console.log("sin contenido");
 	}
-	/*if(content_to_load==='_la_procuraduria_en_accion_'){
-		loadComerciales();
-		//loadVideos();
-		loadLastVideos();
-		loadGaleriaInterna();
-	}*/
 	
 }
 function getContent(content_to_load){
