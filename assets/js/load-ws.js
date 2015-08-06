@@ -185,29 +185,34 @@ function loadContent(content_to_load){
 		content = getContent(content_to_load);
 		//Impresion de galerias
 		if(content.imagenes.length!=0){
-			array_ima = $.parseJSON(content.imagenes.urls);
-			html_galleryImages = '';
-			$.each(array_ima, function (index, value) {
-				html_galleryImages += '<div class="swiper-slide" style="background:url(http://procuraduriaapp.com/ws/galeria/uploads/'+value.img+');"></div>';
-			});
-			//$('.content_'+content_to_load).append('<h2>'+content.imagenes.nombre+'</h2>');
-			$('.content_'+content_to_load).append('<div class="swiper-container sw'+content.id+'"><div class="swiper-wrapper">'+html_galleryImages);
-			$('.content_'+content_to_load).append('</div><div class="swiper-pagination"></div><div class="swiper-button-next animated"></div><div class="swiper-button-prev animated "></div></div>');
-		    setTimeout(function(){ 
-		    	var swiper = new Swiper('.sw'+content.id, {
-			        pagination: '.swiper-pagination',
-			        paginationClickable: true,
-			        spaceBetween: 30,
-			        centeredSlides: true,
-			        nextButton: '.swiper-button-next',
-			        prevButton: '.swiper-button-prev',
-			        autoplay: 5000,
-			        autoplayDisableOnInteraction: false,
-			        slidesPerView: 1,
-			        paginationClickable: true,
-			        loop: true
-			    });
-		    }, 1000);
+			for (var h=0; h<3; h++) {
+				if(content.imagenes[h]){
+					var galeria = content.imagenes[h]; 
+					//codigo impresion galerias
+					array_ima = $.parseJSON(content.imagenes[h].urls);
+					html_galleryImages = '';
+					$.each(array_ima, function (index, value) {
+						html_galleryImages += '<div class="swiper-slide" style="background:url(http://procuraduriaapp.com/ws/galeria/uploads/'+value.img+');"></div>';
+					});
+					$('.content_'+content_to_load).append('<h2>'+galeria.nombre+'</h2>');
+					$('.content_'+content_to_load).append('<div class="swiper-container sw'+galeria.id+'"><div class="swiper-wrapper">'+html_galleryImages);
+					$('.content_'+content_to_load).append('</div><div class="swiper-pagination"></div><div class="swiper-button-next animated"></div><div class="swiper-button-prev animated "></div></div>');
+				    setTimeout(function(){ 
+				    	var swiper = new Swiper('.sw'+galeria.id, {
+					        pagination: '.swiper-pagination',
+					        paginationClickable: true,
+					        spaceBetween: 30,
+					        centeredSlides: true,
+					        autoplay: 5000,
+					        autoplayDisableOnInteraction: false,
+					        slidesPerView: 1,
+					        paginationClickable: true,
+					        loop: true
+					    });
+				    }, 1000);
+				    //Fin codigo impresion galerias
+				}
+			}
 		}
 		
 		//Impresion de contenido
