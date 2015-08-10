@@ -184,7 +184,7 @@ function loadContent(content_to_load){
 		$('.content_'+content_to_load).html('');
 		content = getContent(content_to_load);
 		//Impresion de galerias
-		if(content.imagenes.length!=0){
+		if( content.imagenes && content.imagenes.length!=0){
 			for (var h=0; h<3; h++) {
 				if(content.imagenes[h]){
 					var galeria = content.imagenes[h]; 
@@ -221,7 +221,7 @@ function loadContent(content_to_load){
 		}
 		
 		//Impresion de videos
-		if(content.videos.length!=0){
+		if(content.videos && content.videos.length!=0){
 			if(content.videos.id=="1"){
 				$('.content_'+content_to_load).append('<h2>La Procuradurí­a al aire</h2>');
 				$('.content_'+content_to_load).append('<div id="video"></div>');
@@ -238,7 +238,7 @@ function loadContent(content_to_load){
 		}
 		
 		//Impresion de documentos
-		if(content.documentos.length!=0){
+		if(content.documentos && content.documentos.length!=0){
 			if(content.documentos.tipo == "coleccionables"){
 				$('.content_'+content_to_load).append('<h2>'+content.documentos.titulo+'</h2>');
 				for (var k=0; k<arrayToDocuments.length; k++) {
