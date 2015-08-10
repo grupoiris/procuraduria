@@ -5,9 +5,9 @@ var SES = window.localStorage;
 
 checkConnection();
 function checkConnection() {
-	alert("a");
         var networkState = navigator.network.connection.type;
-
+alert("a");
+alert(networkState);
         var states = {};
         states[Connection.UNKNOWN]  = 'Unknown connection';
     states[Connection.ETHERNET] = 'Ethernet connection';
