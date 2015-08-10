@@ -3,12 +3,9 @@ var arrayGalleryHome 	=new Array();
 var arrayComerciales 	=new Array();
 var SES = window.localStorage;
 
-document.addEventListener("deviceready", DeviceReady, false);
-function DeviceReady(){
+checkConnection();
+function checkConnection() {
 	alert("a");
-	checkConnection();
-}
-  function checkConnection() {
         var networkState = navigator.network.connection.type;
 
         var states = {};
