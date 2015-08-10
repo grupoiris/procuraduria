@@ -3,12 +3,6 @@ var arrayGalleryHome 	=new Array();
 var arrayComerciales 	=new Array();
 var SES = window.localStorage;
 document.addEventListener("pause", notFocus, false);
-if (Ext.device.Connection.isOnline()) {
-         alert('Connected to internet');
-      }
-      else{
-         alert('You are not connected to internet');
-      }
 function notFocus(){
 	console.log("notFocus");
 	alert("notFocus");
@@ -16,8 +10,8 @@ function notFocus(){
 checkConnection();
 function checkConnection() {
 	var networkState = navigator.network.connection.type;
-	alert("checkConnection");
-	alert(networkState);
+	console.log("checkConnection");
+	console.log(networkState);
         var states = {};
         states[Connection.UNKNOWN]  = 'Unknown connection';
     states[Connection.ETHERNET] = 'Ethernet connection';
