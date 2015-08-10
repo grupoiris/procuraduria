@@ -1,6 +1,8 @@
 var arrayToContents 	=new Array();
 var arrayGalleryHome 	=new Array();
 var arrayComerciales 	=new Array();
+var SES = window.localStorage;
+
 function getContentToWs(){
 	
 	$.ajax({
@@ -9,6 +11,7 @@ function getContentToWs(){
 	     type: 'post',
 	     success: function(output) {
 			arrayToContents = jQuery.parseJSON(output);
+			SES.arrayToContents;
 			getMenu();
 	      }
 	});  
@@ -19,6 +22,8 @@ function getContentToWs(){
 	     success: function(output) {
 			arrayGalleryHome_re = jQuery.parseJSON(output);
 			arrayGalleryHome = jQuery.parseJSON(arrayGalleryHome_re);
+			SES.arrayGalleryHome_re;
+			SES.arrayGalleryHome;
 			loadGaleriaHome();
 	      }
 	}); 
@@ -28,6 +33,7 @@ function getContentToWs(){
 	     type: 'post',
 	     success: function(output) {
 			arrayToDocuments = jQuery.parseJSON(output);
+			SES.arrayToDocuments;
 	      }
 	});  
 	/*
@@ -141,6 +147,11 @@ function loadGaleriaInterna(){
 }
 
 function getMenu(){
+	if (navigator.network.connection.type == Connection.NONE){
+	  alert( 'no internet');
+	}else{
+		alert( 'internet');
+	}
 	$('.acordion').html("cargando...");
 	var menu_html = '';
 	for (var i=0; i<arrayToContents.length; i++) { 
