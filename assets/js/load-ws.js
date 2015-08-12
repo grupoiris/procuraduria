@@ -2,11 +2,6 @@ var arrayToContents 	=new Array();
 var arrayGalleryHome 	=new Array();
 var arrayComerciales 	=new Array();
 var SES = window.localStorage;
-document.addEventListener("pause", notFocus, false);
-function notFocus(){
-	console.log("notFocus");
-	alert("notFocus");
-}
 checkConnection();
 function checkConnection() {
 	var networkState = navigator.network;
@@ -76,8 +71,8 @@ clave_api = "AIzaSyCzTmI_-_rNXxo4iKfSOSPuvQkZHkAHDFo";
 
 function loadComerciales(){
 	for (var i=0; i<arrayComerciales.length; i++) {
-		$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <a href="#" onclick="VideoPlayer.play("'+arrayComerciales[i]+'");">'+arrayComerciales[i]+'</a>  </div>');
-		
+		$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" src="'+arrayComerciales[i]+'"></iframe>  </div>');
+		/*$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <a href="#" onclick="VideoPlayer.play("'+arrayComerciales[i]+'");">'+arrayComerciales[i]+'</a>  </div>');*/		
 		/*$('#comerciales').append('<div class="comercial_'+i+'"></div>');
 		var tag = document.createElement('script');
 		tag.src = "https://www.youtube.com/iframe_api";

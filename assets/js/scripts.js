@@ -1,3 +1,8 @@
+document.addEventListener("pause", notFocus, false);
+function notFocus(){
+	console.log("notFocus");
+	alert("notFocus");
+}
 function openPDF(link) {
 	$('.loading_wrap').show();
 	
