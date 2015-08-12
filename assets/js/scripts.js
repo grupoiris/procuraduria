@@ -3,6 +3,17 @@ function notFocus(){
 	console.log("notFocus");
 	alert("notFocus");
 }
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+   console.log("onDeviceReady");
+	alert("onDeviceReady");
+}
+document.addEventListener("resume", onResume, false);
+function onResume() {
+   console.log("onResume");
+	alert("onResume");
+}
+
 function openPDF(link) {
 	$('.loading_wrap').show();
 	
