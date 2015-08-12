@@ -70,7 +70,21 @@
 $( document ).ready(function() {
 	getContentToWs();
 });
-
+document.addEventListener("pause", notFocus, false);
+function notFocus(){
+	console.log("notFocus");
+	alert("notFocus");
+}
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+   console.log("onDeviceReady");
+	alert("onDeviceReady");
+}
+document.addEventListener("resume", onResume, false);
+function onResume() {
+   console.log("onResume");
+	alert("onResume");
+}
 </script>
 <script src="assets/js/swiper.min.js"></script>
 <script src="assets/js/scripts.js"></script>
