@@ -9,10 +9,10 @@ function notFocus(){
 }
 checkConnection();
 function checkConnection() {
-	var networkState = navigator.network.connection.type;
+	var networkState = navigator.network;
 	console.log("checkConnection");
 	console.log(networkState);
-        var states = {};
+        /*var states = {};
         states[Connection.UNKNOWN]  = 'Unknown connection';
     states[Connection.ETHERNET] = 'Ethernet connection';
     states[Connection.WIFI]     = 'WiFi connection';
@@ -21,7 +21,7 @@ function checkConnection() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.NONE]     = 'No network connection';
 
-    alert('Connection type: ' + states[networkState]);
+    alert('Connection type: ' + states[networkState]);*/
 }
 function getContentToWs(){
 	$.ajax({
@@ -68,11 +68,53 @@ function getContentToWs(){
 //YOUTUBE API
 clave_api = "AIzaSyCzTmI_-_rNXxo4iKfSOSPuvQkZHkAHDFo";
 
-function loadComerciales(){
+/*function loadComerciales(){
 	for (var i=0; i<arrayComerciales.length; i++) {
 		$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" src="'+arrayComerciales[i]+'"></iframe>  </div>');
 	}
+}*/
+
+function loadComerciales(){
+	for (var i=0; i<arrayComerciales.length; i++) {
+		$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <a href="#" onclick="VideoPlayer.play("'+arrayComerciales[i]+'");">'+arrayComerciales[i]+'</a>  </div>');
+		
+		/*$('#comerciales').append('<div class="comercial_'+i+'"></div>');
+		var tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		var player;
+		onYouTubeIframeAPIReady("comercial_i","M7lc1UVf-VE");
+		$('#comerciales').append('');*/
+	}
 }
+/*
+function onYouTubeIframeAPIReady(class_vid,vid_id) {
+	player = new YT.Player('player', {
+      height: '390',
+      width: '640',
+      videoId: vid_id,
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+	});
+}
+function onPlayerReady(event) {
+	event.target.playVideo();
+}
+function onPlayerStateChange(event) {
+	var done = false;
+	if (event.data == YT.PlayerState.PLAYING && !done) {
+      setTimeout(stopVideo, 6000);
+      done = true;
+    }
+}
+function stopVideo() {
+    player.stopVideo();
+}
+*/
+
 function loadLastVideos(){
 	$.get(
 	   "https://www.googleapis.com/youtube/v3/channels",{
