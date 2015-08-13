@@ -23,10 +23,15 @@
 	<script src="assets/js/scripts.js"></script>
 	<script>
 	  function onPause() {
+	  	alert("onPause");
+	  	console.log("onPause");
 	    navigator.app.exitApp();
+	    $('.tab_top').click();
 	  };
 	
 	  function onDeviceReady() {
+	  	alert("onDeviceReady");
+	  	console.log("onDeviceReady");
 	    document.addEventListener("pause", onPause, false);
 	  };
 	
