@@ -20,6 +20,7 @@
 	<script src="assets/js/jquery.js"></script>	
 	<script src="assets/js/waypoints.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="assets/js/cordova.js"></script>
+	<script src="assets/js/scripts.js"></script>
 </head>
 <body>
 
@@ -82,6 +83,7 @@ function onLoad() {
 }
 // device APIs are available
 function onDeviceReady() {
+	alert("a");
     document.addEventListener("pause", onPause, false);
     document.addEventListener("resume", onResume, false);
 }
@@ -91,7 +93,6 @@ function onPause() {
 }
 </script>
 <script src="assets/js/swiper.min.js"></script>
-<script src="assets/js/scripts.js"></script>
 <script src="assets/js/load-ws.js"></script>	
 
 <link rel="stylesheet" href="assets/css/photoswipe.css"> 
