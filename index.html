@@ -70,9 +70,9 @@
 <script>
 $( document ).ready(function() {
 	getContentToWs();
-	onLoad()
+	onLoad();
 	console.log("ready");
-	document.addEventListener("pause", notFocus, false);
+	document.addEventListener("pause", onPause, false);
 	document.addEventListener("deviceready", onDeviceReady, false);
 	document.addEventListener("resume", onResume, false);
 });
@@ -92,7 +92,7 @@ function onDeviceReady() {
 function onPause() {
 	alert("onPause")
 	$('iframe').hide();
-	$('iframe').how();
+	$('iframe').show();
 }
 // Handle the pause event
 function onResume() {
