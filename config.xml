@@ -13,7 +13,7 @@
 	<author href="https://irisdev.co" email="pgncolombia@gmail.com">
 			Procuraduría General de la Nación de Colombia
 	</author>
-	
+	<preference name="exit-on-suspend" value="true" />
 	<preference name="keepRunning" value="false" />
 	<preference name="permissions" value="none"/>
 	
