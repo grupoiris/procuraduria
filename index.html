@@ -69,23 +69,33 @@
 <script>
 $( document ).ready(function() {
 	getContentToWs();
+	onLoad()
 	console.log("ready");
 	document.addEventListener("pause", notFocus, false);
 	document.addEventListener("deviceready", onDeviceReady, false);
 	document.addEventListener("resume", onResume, false);
 });
-function notFocus(){
-	console.log("notFocus");
-	alert("notFocus");
+$( document ).ready(function() {
+	getContentToWs();
+	onLoad();
+});
+function onLoad() {
+	document.addEventListener("deviceready", onDeviceReady, false);
 }
+// device APIs are available
 function onDeviceReady() {
-   console.log("onDeviceReady");
-	alert("onDeviceReady");
+    document.addEventListener("pause", onPause, false);
+    document.addEventListener("resume", onResume, false);
 }
+// Handle the pause event
+function onPause() {
+	alert("onPause")
+}
+// Handle the pause event
 function onResume() {
-   console.log("onResume");
-	alert("onResume");
+	alert("onResume")
 }
+
 </script>
 <script src="assets/js/swiper.min.js"></script>
 <script src="assets/js/scripts.js"></script>
