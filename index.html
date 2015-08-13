@@ -46,6 +46,7 @@
 
 <div class="wrap">	
 	<div class="swiper-container sw_home"></div>
+	<a href="#!" onclick="onPause();">onPause</a>
 	<section class="menu" data-depth="0.5">
 		<ul class="acordion" ></ul>
 	</section>
@@ -90,6 +91,8 @@ function onDeviceReady() {
 // Handle the pause event
 function onPause() {
 	alert("onPause")
+	$('iframe').hide();
+	$('iframe').how();
 }
 // Handle the pause event
 function onResume() {
