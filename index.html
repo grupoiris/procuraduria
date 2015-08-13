@@ -46,7 +46,6 @@
 
 <div class="wrap">	
 	<div class="swiper-container sw_home"></div>
-	<a href="#!" onclick="onPause();">onPause</a>
 	<section class="menu" data-depth="0.5">
 		<ul class="acordion" ></ul>
 	</section>
@@ -71,10 +70,8 @@
 $( document ).ready(function() {
 	getContentToWs();
 	onLoad();
-	console.log("ready");
 	document.addEventListener("pause", onPause, false);
 	document.addEventListener("deviceready", onDeviceReady, false);
-	document.addEventListener("resume", onResume, false);
 });
 $( document ).ready(function() {
 	getContentToWs();
@@ -90,15 +87,8 @@ function onDeviceReady() {
 }
 // Handle the pause event
 function onPause() {
-	alert("onPause")
-	$('iframe').hide();
-	$('iframe').show();
+	$('.tab_top').click();
 }
-// Handle the pause event
-function onResume() {
-	alert("onResume")
-}
-
 </script>
 <script src="assets/js/swiper.min.js"></script>
 <script src="assets/js/scripts.js"></script>

@@ -175,7 +175,7 @@ function loadGaleriaHome(){
 	        paginationClickable: true,
 	        loop: true
 	    });
-	}, 1000);
+	}, 500);
 	 
 }
 
@@ -198,7 +198,7 @@ function loadGaleriaInterna(){
 	        paginationClickable: true,
 	        loop: true,
 	    });
-	}, 1000);
+	}, 500);
 	 
 }
 
@@ -287,7 +287,7 @@ function loadContent(content_to_load){
 			if(content.videos.id=="1"){
 				$('.content_'+content_to_load).append('<h2>La Procuradurí­a al aire</h2>');
 				$('.content_'+content_to_load).append('<div id="video"></div>');
-				setTimeout(function(){ loadLastVideos();}, 1000);
+				setTimeout(function(){ loadLastVideos();}, 200);
 			}
 			else if(content.videos.id=="2"){
 				$('.content_'+content_to_load).append('<h2>Mensajes institucionales de televisión, videos y mensaje radial</h2>');
