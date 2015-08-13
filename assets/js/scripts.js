@@ -106,12 +106,6 @@ function sendEmail(){
 	if(validateEmail(ema)){
 		if(nom.length !== 0){
 			if(msj.length !== 0){
-				/*cordova.plugins.email.open({
-				    to:      'julian.montoya@grupoiris.co',
-				    subject: 'Queja o Reclamo desde ProcuraduriaApp',
-				    body:    '<h1>Nice greetings from Leipzig</h1>',
-				    isHtml:  true
-				});*/
 				$.getJSON('http://procuraduriaapp.com/quejas.php?callback=?',{ nombre:nom, email:ema, mensaje:msj },function(data){
 					$('.success').html("Enviado");
 					$('.success').show();
