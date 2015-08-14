@@ -26,12 +26,13 @@
 	<script src="assets/js/scripts.js"></script>
 	<script>
 	  function onPause() {
-	    navigator.app.exitApp();
+	    //navigator.app.exitApp();
 	    $('.tab_top').click();
 	  };
 	
 	  function onDeviceReady() {
 	    document.addEventListener("pause", onPause, true);
+	    document.addEventListener("resume", onPause, true);
 	    document.addEventListener("backbutton", onPause, false);
 	    document.addEventListener("menubutton", onPause, false);
 	    document.addEventListener("searchbutton", onPause, false);
