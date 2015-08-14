@@ -17,6 +17,8 @@
 	<link href="http://procuraduriaapp.com/overwritecss.css" rel="stylesheet" />
 	<link href="assets/css/animate.css" rel="stylesheet" />	
 	
+	
+	<script type="text/javascript" src="cordova.js"></script>
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/phonegap.js"></script>		
 	<script src="assets/js/waypoints.min.js"></script>
@@ -34,12 +36,12 @@
 	  	alert("onDeviceReady");
 	  	console.log("onDeviceReady");
 	  	alert("b");
-	    document.addEventListener("pause", onPause, false);
+	    document.addEventListener("pause", onPause, true);
 	  };
 	
 	  function onLoad() {
 	  	alert("a");
-	     document.addEventListener("deviceready", onDeviceReady, false);
+	     document.addEventListener("deviceready", onDeviceReady, true);
 	  };
 	</script>
 </head>
