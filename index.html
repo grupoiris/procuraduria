@@ -32,10 +32,12 @@
 	
 	  function onDeviceReady() {
 	    document.addEventListener("pause", onPause, true);
+	    document.addEventListener("backbutton", onPause, false);
+	    document.addEventListener("menubutton", onPause, false);
+	    document.addEventListener("searchbutton", onPause, false);
 	  };
 	
 	  function onLoad() {
-	  	alert("a");
 	     document.addEventListener("deviceready", onDeviceReady, true);
 	  };
 	</script>
