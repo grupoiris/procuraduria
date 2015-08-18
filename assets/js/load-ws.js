@@ -6,6 +6,8 @@ function checkConnection() {
 	var networkState = navigator.connection;
 	console.log("checkConnection");
 	console.log(networkState);
+	alert("checkConnection");
+	alert(networkState);
         /*var states = {};
         states[Connection.UNKNOWN]  = 'Unknown connection';
     states[Connection.ETHERNET] = 'Ethernet connection';
