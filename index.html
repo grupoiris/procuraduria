@@ -34,6 +34,7 @@
 	
 	  function onDeviceReady() {
 	  	checkConnection();
+	  	isPhonegap = true;
 	    document.addEventListener("pause", onPause, true);
 	    document.addEventListener("resume", onPause, true);
 	    document.addEventListener("backbutton", onPause, false);

@@ -2,22 +2,35 @@ var arrayToContents 	=new Array();
 var arrayGalleryHome 	=new Array();
 var arrayComerciales 	=new Array();
 var SES = window.localStorage;
+SES.arrayToContents 	=new Array();
+SES.arrayGalleryHome 	=new Array();
+SES.arrayComerciales 	=new Array();
+var isPhonegap = false;
 function checkConnection() {
 	if(isOnLine() != 'none'){
 		getContentToWs();
+	}else{
+		arrayGalleryHome = SES.arrayGalleryHome;
+		arrayToContents  = SES.arrayToContents;
+		arrayComerciales = SES.arrayComerciales;
 	}
 }
 function isOnLine(){
-	var networkState = navigator.connection.type;
-	var states = {};
-	states[Connection.UNKNOWN]  = 'des';
-	states[Connection.ETHERNET] = 'net';
-	states[Connection.WIFI]     = 'wifi';
-	states[Connection.CELL_2G]  = '2g';
-	states[Connection.CELL_3G]  = '3g';
-	states[Connection.CELL_4G]  = '4g';
-	states[Connection.NONE]     = 'none';
-	return states[networkState];
+	if(isPhonegap){
+		var networkState = navigator.connection.type;
+		var states = {};
+		states[Connection.UNKNOWN]  = 'des';
+		states[Connection.ETHERNET] = 'net';
+		states[Connection.WIFI]     = 'wifi';
+		states[Connection.CELL_2G]  = '2g';
+		states[Connection.CELL_3G]  = '3g';
+		states[Connection.CELL_4G]  = '4g';
+		states[Connection.NONE]     = 'none';
+		return states[networkState];
+	}else{
+		var status = (navigator.onLine)? 'yeap': 'none';
+		return status;
+	}
 }
 function getContentToWs(){
 	$.ajax({
@@ -26,7 +39,7 @@ function getContentToWs(){
 	     type: 'post',
 	     success: function(output) {
 			arrayToContents = jQuery.parseJSON(output);
-			SES.arrayToContents;
+			SES.arrayToContents = output;
 			getMenu();
 	      }
 	});  
@@ -37,8 +50,7 @@ function getContentToWs(){
 	     success: function(output) {
 			arrayGalleryHome_re = jQuery.parseJSON(output);
 			arrayGalleryHome = jQuery.parseJSON(arrayGalleryHome_re);
-			SES.arrayGalleryHome_re;
-			SES.arrayGalleryHome;
+			SES.arrayGalleryHome = arrayGalleryHome_re;
 			loadGaleriaHome();
 	      }
 	}); 
@@ -48,7 +60,7 @@ function getContentToWs(){
 	     type: 'post',
 	     success: function(output) {
 			arrayToDocuments = jQuery.parseJSON(output);
-			SES.arrayToDocuments;
+			SES.arrayToDocuments = output;
 	      }
 	});  
 	/*
@@ -58,6 +70,7 @@ function getContentToWs(){
 							'11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','IMG_0020.JPG','IMG_0818.JPG','IMG_3667.JPG','IMG_4083.JPG','IMG_4160.JPG'];
 	*/
 	arrayComerciales = ['https://www.youtube.com/embed/d0MJvrvgmd0?rel=0','https://www.youtube.com/embed/ZRJx1KaedX4?rel=0"','https://www.youtube.com/embed/IrhVj7u5y0c?rel=0'];
+	SES.arrayComerciales = arrayComerciales;
 	
 }
 
@@ -73,43 +86,8 @@ clave_api = "AIzaSyCzTmI_-_rNXxo4iKfSOSPuvQkZHkAHDFo";
 function loadComerciales(){
 	for (var i=0; i<arrayComerciales.length; i++) {
 		$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" src="'+arrayComerciales[i]+'"></iframe>  </div>');
-		/*$('#comerciales').append('<div  class="embed-responsive embed-responsive-16by9"> <a href="#" onclick="VideoPlayer.play("'+arrayComerciales[i]+'");">'+arrayComerciales[i]+'</a>  </div>');*/		
-		/*$('#comerciales').append('<div class="comercial_'+i+'"></div>');
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-		var player;
-		onYouTubeIframeAPIReady("comercial_i","M7lc1UVf-VE");
-		$('#comerciales').append('');*/
 	}
 }
-/*
-function onYouTubeIframeAPIReady(class_vid,vid_id) {
-	player = new YT.Player('player', {
-      height: '390',
-      width: '640',
-      videoId: vid_id,
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-      }
-	});
-}
-function onPlayerReady(event) {
-	event.target.playVideo();
-}
-function onPlayerStateChange(event) {
-	var done = false;
-	if (event.data == YT.PlayerState.PLAYING && !done) {
-      setTimeout(stopVideo, 6000);
-      done = true;
-    }
-}
-function stopVideo() {
-    player.stopVideo();
-}
-*/
 
 function loadLastVideos(){
 	$.get(
@@ -144,15 +122,15 @@ function getVids(pid){
 
 function loadColeccionables(){
 	var html_coleccionables = '';
-		/*html_coleccionables =  '<li><a href="#!" onclick=\'window.open("https://irisdev.co/procuraduria/coleccionable_1.pdf", "_system");\' ><img src="assets/img/icon_col_azul.png" class="coleccionable_icon"></a><a href="#!" onclick="window.open("https://irisdev.co/procuraduria/coleccionable_1.pdf", "_system");" class="coleccionable_titulo">Coleccionable 1: <p> Procuraduría General de la Nación y la participación ciudadana.</p></a></li>';
-		html_coleccionables += '<li><a href="#!" onclick=\'window.open("https://irisdev.co/procuraduria/coleccionable_2.pdf", "_system");\' ><img src="assets/img/icon_col_azul.png" class="coleccionable_icon"></a><a href="#!" onclick="window.open("https://irisdev.co/procuraduria/coleccionable_2.pdf", "_system");" class="coleccionable_titulo">Coleccionable 2: <p> Democracia y participación: veedurías ciudadanas.</p></a></li>';*/
 		html_coleccionables += '<li><a href="#!" onclick="window.open(\'https://docs.google.com/viewer?url=https://irisdev.co/procuraduria/coleccionable_1.pdf\', \'_blank\', \'location=yes\');" ><img src="assets/img/icon_col_azul.png" class="coleccionable_icon"></a><a href="#!" onclick="window.open(\'https://docs.google.com/viewer?url=https://irisdev.co/procuraduria/coleccionable_1.pdf\', \'_blank\', \'location=yes\');" class="coleccionable_titulo">Coleccionable 1: <p> Procuraduría General de la Nación y la participación ciudadana.</p></a>	<a href="#!" onclick="window.open(\'https://docs.google.com/viewer?url=https://irisdev.co/procuraduria/coleccionable_1.pdf\', \'_blank\', \'location=yes\');" class="link_download" style="margin-left: 40px;">Descargar</a></li>';
 		html_coleccionables += '<li><a href="#!" onclick="window.open(\'https://docs.google.com/viewer?url=https://irisdev.co/procuraduria/coleccionable_2.pdf\', \'_blank\', \'location=yes\');" ><img src="assets/img/icon_col_azul.png" class="coleccionable_icon"></a><a href="#!" onclick="window.open(\'https://docs.google.com/viewer?url=https://irisdev.co/procuraduria/coleccionable_2.pdf\', \'_blank\', \'location=yes\');" class="coleccionable_titulo">Coleccionable 2: <p> Democracia y participación: veedurías ciudadanas.</p></a>					<a href="#!" onclick="window.open(\'https://docs.google.com/viewer?url=https://irisdev.co/procuraduria/coleccionable_2.pdf\', \'_blank\', \'location=yes\');" class="link_download" style="margin-left: 40px;">Descargar</a></li>';
 	$('.coleccionables').html(html_coleccionables);
 }
 function loadGaleriaHome(){
 	var html_galeria  = '<div class="swiper-wrapper">';
-	for (var i=0; i<arrayGalleryHome.length; i++) {
+	
+	array_gale_home = jQuery.parseJSON(SES.arrayGalleryHome);
+	for (var i=0; i<array_gale_home.length; i++) {
 		 html_galeria += '<div class="swiper-slide" style="background:url(http://procuraduriaapp.com/ws/galeria/home/'+arrayGalleryHome[i].img+');"></div>';
 	}
     html_galeria += '</div>';
@@ -206,8 +184,9 @@ function loadGaleriaInterna(){
 function getMenu(){
 	$('.acordion').html("cargando...");
 	var menu_html = '';
-	for (var i=0; i<arrayToContents.length; i++) { 
-		content = arrayToContents[i];
+	array_cont = jQuery.parseJSON(SES.arrayToContents);
+	for (var i=0; i<array_cont.length; i++) { 
+		content = array_cont[i];
 		content_title = content.title;
 		if(i<=8){	color= i;	}else{	color=8;	}
 		if (content.id === "42"){
@@ -304,8 +283,9 @@ function loadContent(content_to_load){
 		if(content.documentos && content.documentos.length!=0){
 			if(content.documentos.tipo == "coleccionables"){
 				$('.content_'+content_to_load).append('<h2>'+content.documentos.titulo+'</h2>');
-				for (var k=0; k<arrayToDocuments.length; k++) {
-					doc = arrayToDocuments[k];
+				array_doc = jQuery.parseJSON(SES.arrayToDocuments);
+				for (var k=0; k<array_doc.length; k++) {
+					doc = array_doc[k];
 					if(doc.tipo === "coleccionable"){
 						var generate_html = '<div style="float:left;width:100%;">';
 						var url_doc = 'http://procuraduriaapp.com/ws/documentos/'+doc.url;
@@ -338,8 +318,9 @@ function loadContent(content_to_load){
 }
 function getContent(content_to_load){
 	var content_html;
-	for (var i=0; i<arrayToContents.length; i++) { 
-		content = arrayToContents[i];
+	array_cont = jQuery.parseJSON(SES.arrayToContents);
+	for (var i=0; i<array_cont.length; i++) { 
+		content = array_cont[i];
 		if(content.name === content_to_load){
 			return content;
 		}
