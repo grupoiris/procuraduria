@@ -24,6 +24,7 @@ function isOnLine(){
 	states[Connection.CELL_3G]  = '3g';
 	states[Connection.CELL_4G]  = '4g';
 	states[Connection.NONE]     = 'none';
+	alert(states[networkState]);
 	return states[networkState];
 }
 function getContentToWs(){
