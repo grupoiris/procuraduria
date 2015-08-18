@@ -19,6 +19,8 @@
 	
 	<access origin="*"  launch-external="yes"/>
 	
+	<gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
+	
 	<icon src="res/icon/icon.png" /> 
 	
 	<icon src="res/icon/icon.png" gap:platform="android" gap:density="ldpi" />
