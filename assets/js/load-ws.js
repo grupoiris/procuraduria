@@ -4,7 +4,6 @@ var arrayComerciales 	=new Array();
 var SES = window.localStorage;
 var isPhonegap = false;
 function checkConnection() {
-	alert(isOnLine());
 	if(isOnLine() != 'none'){
 		alert("conection");
 		SES.arrayToContents 	=new Array();
@@ -16,21 +15,16 @@ function checkConnection() {
 	}
 }
 function isOnLine(){
-	if(isPhonegap){
-		var networkState = navigator.connection.type;
-		var states = {};
-		states[Connection.UNKNOWN]  = 'des';
-		states[Connection.ETHERNET] = 'net';
-		states[Connection.WIFI]     = 'wifi';
-		states[Connection.CELL_2G]  = '2g';
-		states[Connection.CELL_3G]  = '3g';
-		states[Connection.CELL_4G]  = '4g';
-		states[Connection.NONE]     = 'none';
-		return states[networkState];
-	}else{
-		var status = (navigator.onLine)? 'yeap': 'none';
-		return status;
-	}
+	var networkState = navigator.connection.type;
+	var states = {};
+	states[Connection.UNKNOWN]  = 'des';
+	states[Connection.ETHERNET] = 'net';
+	states[Connection.WIFI]     = 'wifi';
+	states[Connection.CELL_2G]  = '2g';
+	states[Connection.CELL_3G]  = '3g';
+	states[Connection.CELL_4G]  = '4g';
+	states[Connection.NONE]     = 'none';
+	return states[networkState];
 }
 function getContentToWs(){
 	$.ajax({
