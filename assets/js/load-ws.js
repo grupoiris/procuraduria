@@ -4,6 +4,7 @@ var arrayComerciales 	=new Array();
 var SES = window.localStorage;
 var isPhonegap = false;
 function checkConnection() {
+	alert(isOnLine());
 	if(isOnLine() != 'none'){
 		alert("conection");
 		SES.arrayToContents 	=new Array();
