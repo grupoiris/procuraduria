@@ -25,19 +25,21 @@
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	<script src="assets/js/scripts.js"></script>
 	<script>
-	  function onPause() {
-	    //navigator.app.exitApp();
-	    $('.tab_top').click();
-	  };
-	
-	  function onDeviceReady() {
-	    document.addEventListener("pause", onPause, true);
-	    document.addEventListener("resume", onPause, true);
-	    document.addEventListener("backbutton", onPause, false);
-	    document.addEventListener("menubutton", onPause, false);
-	    document.addEventListener("searchbutton", onPause, false);
-	    document.addEventListener("deviceready", deviceInfo, true);
-	  };
+		function onPause() {
+			//navigator.app.exitApp();
+			$('.tab_top').click();
+		};
+		function deviceInfo(){
+	  		alert(navigator.network.connection.type);
+		}
+		  function onDeviceReady() {
+		  	deviceInfo();
+		    document.addEventListener("pause", onPause, true);
+		    document.addEventListener("resume", onPause, true);
+		    document.addEventListener("backbutton", onPause, false);
+		    document.addEventListener("menubutton", onPause, false);
+		    document.addEventListener("searchbutton", onPause, false);
+		  };
 	
 	  function onLoad() {
 	     document.addEventListener("deviceready", onDeviceReady, true);
