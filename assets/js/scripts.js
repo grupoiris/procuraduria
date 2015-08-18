@@ -1,3 +1,6 @@
+var deviceInfo = function(){
+  alert(navigator.network.connection.type);
+}
 function openPDF(link) {
 	$('.loading_wrap').show();
 	
