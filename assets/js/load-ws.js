@@ -2,7 +2,6 @@ var arrayToContents 	=new Array();
 var arrayGalleryHome 	=new Array();
 var arrayComerciales 	=new Array();
 var SES = window.localStorage;
-checkConnection();
 function checkConnection() {
 	var networkState = navigator.connection;
 	console.log("checkConnection");

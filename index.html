@@ -24,6 +24,8 @@
 	<script src="assets/js/waypoints.min.js"></script>
 	<!--<script type="text/javascript" charset="utf-8" src="assets/js/cordova.js"></script>-->
 	<script src="assets/js/scripts.js"></script>
+	<script src="assets/js/swiper.min.js"></script>
+<script src="assets/js/load-ws.js"></script>
 	<script>
 	  function onPause() {
 	    //navigator.app.exitApp();
@@ -31,6 +33,7 @@
 	  };
 	
 	  function onDeviceReady() {
+	  	checkConnection();
 	    document.addEventListener("pause", onPause, true);
 	    document.addEventListener("resume", onPause, true);
 	    document.addEventListener("backbutton", onPause, false);
@@ -91,30 +94,8 @@
 <script>
 $( document ).ready(function() {
 	getContentToWs();
-	/*onLoad();
-	document.addEventListener("pause", onPause, false);
-	document.addEventListener("deviceready", onDeviceReady, false);*/
 });
-/*$( document ).ready(function() {
-	getContentToWs();
-	onLoad();
-});
-function onLoad() {
-	document.addEventListener("deviceready", onDeviceReady, false);
-}
-// device APIs are available
-function onDeviceReady() {
-	alert("a");
-    document.addEventListener("pause", onPause, false);
-    document.addEventListener("resume", onResume, false);
-}
-// Handle the pause event
-function onPause() {
-	$('.tab_top').click();
-}*/
 </script>
-<script src="assets/js/swiper.min.js"></script>
-<script src="assets/js/load-ws.js"></script>	
 
 <link rel="stylesheet" href="assets/css/photoswipe.css"> 
 <link rel="stylesheet" href="assets/css/default-skin.css"> 
