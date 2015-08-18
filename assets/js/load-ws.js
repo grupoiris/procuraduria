@@ -15,7 +15,6 @@ function checkConnection() {
 	}
 }
 function isOnLine(){
-	alert(navigator.connection);
 	var networkState = navigator.connection.type;
 	var states = {};
 	states[Connection.UNKNOWN]  = 'des';
@@ -25,7 +24,8 @@ function isOnLine(){
 	states[Connection.CELL_3G]  = '3g';
 	states[Connection.CELL_4G]  = '4g';
 	states[Connection.NONE]     = 'none';
-	alert(networkState);
+	console.log(networkState);
+	console.log(states[networkState]);
 	return states[networkState];
 }
 function getContentToWs(){
