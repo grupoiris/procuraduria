@@ -2,17 +2,16 @@ var arrayToContents 	=new Array();
 var arrayGalleryHome 	=new Array();
 var arrayComerciales 	=new Array();
 var SES = window.localStorage;
-SES.arrayToContents 	=new Array();
-SES.arrayGalleryHome 	=new Array();
-SES.arrayComerciales 	=new Array();
 var isPhonegap = false;
 function checkConnection() {
 	if(isOnLine() != 'none'){
+		alert("conection");
+		SES.arrayToContents 	=new Array();
+		SES.arrayGalleryHome 	=new Array();
+		SES.arrayComerciales 	=new Array();
 		getContentToWs();
 	}else{
-		arrayGalleryHome = SES.arrayGalleryHome;
-		arrayToContents  = SES.arrayToContents;
-		arrayComerciales = SES.arrayComerciales;
+		alert("no conection");
 	}
 }
 function isOnLine(){
