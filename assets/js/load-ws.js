@@ -6,9 +6,7 @@ var SES = window.localStorage;
 function checkConnection() {
 	var networkState = navigator.network;
 	console.log("checkConnection");
-	alert("checkConnection");
 	console.log(networkState);
-	alert(networkState);
         /*var states = {};
         states[Connection.UNKNOWN]  = 'Unknown connection';
     states[Connection.ETHERNET] = 'Ethernet connection';

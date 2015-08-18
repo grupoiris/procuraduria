@@ -22,24 +22,21 @@
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/phonegap.js"></script>		
 	<script src="assets/js/waypoints.min.js"></script>
-	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<!--<script type="text/javascript" charset="utf-8" src="assets/js/cordova.js"></script>-->
 	<script src="assets/js/scripts.js"></script>
 	<script>
-		function onPause() {
-			//navigator.app.exitApp();
-			$('.tab_top').click();
-		};
-		function deviceInfo(){
-	  		alert(navigator.network.connection.type);
-		}
-		  function onDeviceReady() {
-		  	deviceInfo();
-		    document.addEventListener("pause", onPause, true);
-		    document.addEventListener("resume", onPause, true);
-		    document.addEventListener("backbutton", onPause, false);
-		    document.addEventListener("menubutton", onPause, false);
-		    document.addEventListener("searchbutton", onPause, false);
-		  };
+	  function onPause() {
+	    //navigator.app.exitApp();
+	    $('.tab_top').click();
+	  };
+	
+	  function onDeviceReady() {
+	    document.addEventListener("pause", onPause, true);
+	    document.addEventListener("resume", onPause, true);
+	    document.addEventListener("backbutton", onPause, false);
+	    document.addEventListener("menubutton", onPause, false);
+	    document.addEventListener("searchbutton", onPause, false);
+	  };
 	
 	  function onLoad() {
 	     document.addEventListener("deviceready", onDeviceReady, true);
