@@ -2,11 +2,11 @@ function openPDF(link) {
 	$('.loading_wrap').show();
 	
      var ref2 = window.open(link, '_system', 'location=yes');
-     
+     /*
      ref2.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
      ref2.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
      ref2.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-     ref2.addEventListener('exit', function(event) { alert(event.type); });
+     ref2.addEventListener('exit', function(event) { alert(event.type); });*/
 }
 
 $(".splash").click(hidesplash);

@@ -168,6 +168,15 @@ header .logo-procuradoria{
   background-image: url("../img/prev.png");
 }
 [data-bg='yellow']{ background-color:#ffb400; }
+/*[data-bg='blue0']{ background-color:#069be0; }
+[data-bg='blue1']{ background-color:#008ed4; }
+[data-bg='blue2']{ background-color:#0186C7; }
+[data-bg='blue3']{ background-color:#007FBD; }
+[data-bg='blue4']{ background-color:#0078B3; }
+[data-bg='blue5']{ background-color:#0171A8; }
+[data-bg='blue6']{ background-color:#016A9D; }
+[data-bg='blue7']{ background-color:#01608F; }
+[data-bg='blue8']{ background-color:#015883; }*/
 [data-bg='blue0']{ background-color:#069be0; }
 [data-bg='blue1']{ background-color:#008ed4; }
 [data-bg='blue2']{ background-color:#0186C7; }
@@ -177,6 +186,7 @@ header .logo-procuradoria{
 [data-bg='blue6']{ background-color:#016A9D; }
 [data-bg='blue7']{ background-color:#01608F; }
 [data-bg='blue8']{ background-color:#015883; }
+
 
 [data-bg='yellow'] .acordion-title{
 	 margin-left: 15px;

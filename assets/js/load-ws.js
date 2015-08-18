@@ -2,11 +2,13 @@ var arrayToContents 	=new Array();
 var arrayGalleryHome 	=new Array();
 var arrayComerciales 	=new Array();
 var SES = window.localStorage;
-//checkConnection();
+checkConnection();
 function checkConnection() {
 	var networkState = navigator.network;
 	console.log("checkConnection");
+	alert("checkConnection");
 	console.log(networkState);
+	alert(networkState);
         /*var states = {};
         states[Connection.UNKNOWN]  = 'Unknown connection';
     states[Connection.ETHERNET] = 'Ethernet connection';
