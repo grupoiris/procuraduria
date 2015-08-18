@@ -4,7 +4,7 @@ var arrayComerciales 	=new Array();
 var SES = window.localStorage;
 var isPhonegap = false;
 function checkConnection() {
-	if(isOnLine() != 'none'){
+	if(isOnLine() != 'none' && isOnLine() != 'des'){
 		alert("conection");
 		SES.arrayToContents 	=new Array();
 		SES.arrayGalleryHome 	=new Array();
@@ -16,6 +16,7 @@ function checkConnection() {
 }
 function isOnLine(){
 	var networkState = navigator.connection.type;
+	alert(navigator.connection);
 	var states = {};
 	states[Connection.UNKNOWN]  = 'des';
 	states[Connection.ETHERNET] = 'net';
@@ -24,7 +25,6 @@ function isOnLine(){
 	states[Connection.CELL_3G]  = '3g';
 	states[Connection.CELL_4G]  = '4g';
 	states[Connection.NONE]     = 'none';
-	alert(states[networkState]);
 	return states[networkState];
 }
 function getContentToWs(){
