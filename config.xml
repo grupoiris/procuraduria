@@ -2,7 +2,7 @@
 	<widget xmlns   = "http://www.w3.org/ns/widgets"
 		xmlns:gap   = "http://phonegap.com/ns/1.0"
 		id          = "com.procuraduria.procuraduriapp"
-		versionCode = "08" 
+		versionCode = "08"
 		version     = "0.1.8" >
 	<!-- versionCode is optional and Android only -->
 	
