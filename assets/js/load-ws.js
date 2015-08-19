@@ -4,14 +4,15 @@ var arrayComerciales 	=new Array();
 var SES = window.localStorage;
 var isPhonegap = false;
 function checkConnection() {
-	if(isOnLine() != 'none' && isOnLine() != 'des'){
+	/*if(isOnLine() != 'none' && isOnLine() != 'des'){
 		SES.arrayToContents 	=new Array();
 		SES.arrayGalleryHome 	=new Array();
 		SES.arrayComerciales 	=new Array();
 		getContentToWs();
 	}else{
 		getContentToWs();
-	}
+	}*/
+	getContentToWs();
 }
 function isOnLine(){
 	console.log(navigator.connection);
@@ -224,6 +225,7 @@ function loadContent(content_to_load){
 		content = getContent(content_to_load);
 		//Impresion de galerias
 		if( content.imagenes && content.imagenes.length!=0){
+			console.log(content.imagenes);
 			for (var h=0; h<3; h++) {
 				if(content.imagenes[h]){
 					var galeria = content.imagenes[h]; 

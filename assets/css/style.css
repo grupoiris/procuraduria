@@ -177,15 +177,16 @@ header .logo-procuradoria{
 [data-bg='blue6']{ background-color:#016A9D; }
 [data-bg='blue7']{ background-color:#01608F; }
 [data-bg='blue8']{ background-color:#015883; }*/
-[data-bg='blue0']{ background-color:#069be0; }
-[data-bg='blue1']{ background-color:#008ed4; }
-[data-bg='blue2']{ background-color:#0186C7; }
-[data-bg='blue3']{ background-color:#007FBD; }
-[data-bg='blue4']{ background-color:#0078B3; }
-[data-bg='blue5']{ background-color:#0171A8; }
-[data-bg='blue6']{ background-color:#016A9D; }
-[data-bg='blue7']{ background-color:#01608F; }
-[data-bg='blue8']{ background-color:#015883; }
+[data-bg='blue0']{ background-color:#87de00; }
+[data-bg='blue1']{ background-color:#81d302; }
+[data-bg='blue2']{ background-color:#7ac703; }
+[data-bg='blue3']{ background-color:#72bb01; }
+[data-bg='blue4']{ background-color:#6aae00; }
+[data-bg='blue5']{ background-color:#62a100; }
+[data-bg='blue6']{ background-color:#5b9500; }
+[data-bg='blue7']{ background-color:#558a02; }
+[data-bg='blue8']{ background-color:#4d7e01; }
+[data-bg='blue9']{ background-color:#467201; }
 
 
 [data-bg='yellow'] .acordion-title{
