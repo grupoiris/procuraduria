@@ -16,7 +16,7 @@ function checkConnection() {
 }
 function isOnLine(){
 	console.log(navigator.connection);
-	alert(navigator.connection);
+	console.log(navigator.connection.type);
 	var networkState = navigator.connection.type;
 	var states = {};
 	states[Connection.UNKNOWN]  = 'des';
