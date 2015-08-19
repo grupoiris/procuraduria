@@ -5,13 +5,11 @@ var SES = window.localStorage;
 var isPhonegap = false;
 function checkConnection() {
 	if(isOnLine() != 'none' && isOnLine() != 'des'){
-		alert("conection");
 		SES.arrayToContents 	=new Array();
 		SES.arrayGalleryHome 	=new Array();
 		SES.arrayComerciales 	=new Array();
 		getContentToWs();
 	}else{
-		alert("no conection");
 		getContentToWs();
 	}
 }
