@@ -12,6 +12,7 @@ function checkConnection() {
 		getContentToWs();
 	}else{
 		alert("no conection");
+		getContentToWs();
 	}
 }
 function isOnLine(){
