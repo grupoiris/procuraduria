@@ -36,12 +36,21 @@
 	<icon src="res/icon/icon-120.png" gap:platform="ios" width="120" height="120" />
 	<icon src="res/icon/icon-152.png" gap:platform="ios" width="152" height="152" />
 	<icon src="res/icon/icon-60@2x.png" gap:platform="ios" width="120" height="120" />
-	<icon src="res/icon/icon-60@3x.png" gap:platform="ios" width="152" height="152" />
+	<icon src="res/icon/icon-60@3x.png" gap:platform="ios" width="180" height="180" />
 	<icon src="res/icon/icon-72@2x.png" gap:platform="ios" width="144" height="144" />
+	<icon src="res/icon/icon-76@2x.png" gap:platform="ios" width="152" height="152" />
 	<icon src="res/icon/icon-120@2x.png" gap:platform="ios" width="240" height="240" />
 	<icon src="res/icon/icon.png" gap:platform="webos" />
 	<icon src="res/icon/icon.png" gap:platform="winphone" />
 	<icon src="res/icon/icon.png" gap:platform="winphone" gap:role="background" />
+	
+	<!-- Settings Icon -->
+	<icon src="res/icon/icon-small.png" gap:platform="ios" width="29" height="29" />
+	<icon src="res/icon/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+	
+	<!-- Spotlight Icon -->
+	<icon src="res/icon/icon-40.png" gap:platform="ios" width="40" height="40" />
+	<icon src="res/icon/icon-40@2x.png" gap:platform="ios" width="80" height="80" />
 	
 	
 	<gap:splash src="res/screen/screen.png" gap:platform="android" gap:density="ldpi" />
@@ -49,11 +58,11 @@
 	<gap:splash src="res/screen/screen.png" gap:platform="android" gap:density="hdpi" />
 	<gap:splash src="res/screen/screen.png" gap:platform="android" gap:density="xhdpi" />
 	<gap:splash src="res/screen/screen.png" gap:platform="blackberry" />
-	<gap:splash src="res/screen/screen.png" gap:platform="ios"     width="320" height="480" />
-	<gap:splash src="res/screen/screen.png" gap:platform="ios"     width="640" height="960" />
-	<gap:splash src="res/screen/screen.png" gap:platform="ios"     width="640" height="1136" />
-	<gap:splash src="res/screen/screen.png" gap:platform="ios"     width="768" height="1024" />
-	<gap:splash src="res/screen/screen.png" gap:platform="ios"     width="1024" height="768" />
+	<gap:splash src="res/screen/screen_320.png" gap:platform="ios"     width="320" height="480" />
+	<gap:splash src="res/screen/screen_640.png" gap:platform="ios"     width="640" height="960" />
+	<gap:splash src="res/screen/screen_640_2.png" gap:platform="ios"     width="640" height="1136" />
+	<gap:splash src="res/screen/screen_768.png" gap:platform="ios"     width="768" height="1024" />
+	<gap:splash src="res/screen/screen_1024.png" gap:platform="ios"     width="1024" height="768" />
 	<gap:splash src="res/screen/screen.png" gap:platform="winphone" />
 	
 </widget>
