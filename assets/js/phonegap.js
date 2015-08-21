@@ -414,7 +414,7 @@ document.addEventListener = function(evt, handler, capture) {
     else {
         // If subscribing to Android backbutton
         if (e === 'backbutton') {
-            PhoneGap.exec(null, null, "App", "overrideBackbutton", [true]);
+           //PhoneGap.exec(null, null, "App", "overrideBackbutton", [true]);
         }
         
         // If subscribing to an event that is handled by a plugin
