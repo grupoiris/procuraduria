@@ -5,6 +5,7 @@ var SES = window.localStorage;
 var isPhonegap = false;
 function checkConnection() {
 	var onLine = isOnLine();
+	alert(onLine);
 	if( onLine != 'none' && onLine != 'des'){
 		SES.arrayToContents 	=new Array();
 		SES.arrayGalleryHome 	=new Array();
@@ -16,14 +17,7 @@ function checkConnection() {
 	getContentToWs();
 }
 function isOnLine(){
-	console.log("is OnLine");
 	setTimeout(function(){
-		console.log("navigator connection");
-		console.log(navigator.connection);
-		console.log("navigator connection type");
-		alert("navigator.connection.type");
-		alert(navigator.connection.type);
-		console.log(navigator.connection.type);
 		var networkState = navigator.connection.type;
 		var states = {};
 		states[Connection.UNKNOWN]  = 'des';
@@ -33,9 +27,6 @@ function isOnLine(){
 		states[Connection.CELL_3G]  = '3g';
 		states[Connection.CELL_4G]  = '4g';
 		states[Connection.NONE]     = 'none';
-		console.log("networkState");
-		console.log(networkState);
-		console.log(states[networkState]);
 		return states[networkState];
 	}, 500);
 }

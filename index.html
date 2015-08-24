@@ -32,8 +32,6 @@
 	  };
 	
 	  function onDeviceReady() {
-	  	alert('device ready');
-	  	console.log("onDeviceReady");
 	  	checkConnection();
 	  	isPhonegap = true;
 	    document.addEventListener("pause", onPause, true);
@@ -42,9 +40,6 @@
 	    document.addEventListener("menubutton", onPause, false);
 	    document.addEventListener("searchbutton", onPause, false);
 	  };
-		document.addEventListener("deviceready", function(){
-	      alert("123");
-	 },false);
 	  function onLoad() {
 	     document.addEventListener("deviceready", onDeviceReady, false);
 	  };
@@ -71,7 +66,6 @@
 	    <a  href="#" onclick="window.open('http://www.procuraduria.gov.co/' , '_system');"><div class="logo-procuradoria"></div></a>
 	</header>
 	<div class="wrap">
-		<a href="#!" onclick="isOnLine();">test</a>	
 		<div class="swiper-container sw_home"></div>
 		<section class="menu" data-depth="0.5">
 			<ul class="acordion" ></ul>
