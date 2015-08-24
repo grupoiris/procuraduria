@@ -18,9 +18,9 @@ function checkConnection() {
 }
 function isOnLine(){
 	setTimeout(function(){
-		/*console.log(navigator.connection);
+		console.log(navigator.connection);
 		console.log("navigator connection type");
-		*/alert("navigator.connection.type");
+		alert("navigator.connection.type");
 		alert(navigator.connection.type);
 		console.log(navigator.connection.type);
 		var networkState = navigator.connection.type;
