@@ -42,7 +42,9 @@
 	    document.addEventListener("menubutton", onPause, false);
 	    document.addEventListener("searchbutton", onPause, false);
 	  };
-	
+		document.addEventListener("deviceready", function(){
+	      alert("123");
+	 },true);
 	  function onLoad() {
 	     document.addEventListener("deviceready", onDeviceReady, true);
 	  };
