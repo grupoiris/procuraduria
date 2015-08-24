@@ -19,15 +19,20 @@ function checkConnection() {
 			SES.arrayGalleryHome 	=new Array();
 			SES.arrayComerciales 	=new Array();
 			getContentToWs();
+		}else{
+			getContentToLocalStorage();
 		}
 		
 		return networkState;
 	}, 1000);
 }
+function getContentToLocalStorage(){
+	getMenu();
+	loadGaleriaHome();
+}
 function getContentToWs(){
 	console.log("getContentToWs");
 	alert("getContentToWs");
-	alert(SES.arrayToContents);
 	$.ajax({
         url:'http://procuraduriaapp.com/admin/dist/funciones.php',
 	     data: {action: 'getContents'},
