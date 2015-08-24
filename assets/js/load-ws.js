@@ -4,17 +4,6 @@ var arrayComerciales 	=new Array();
 var SES = window.localStorage;
 var isPhonegap = false;
 function checkConnection() {
-	var onLine = isOnLine(); 
-	alert(onLine);
-	if( onLine == 'none' || onLine == 'des'){
-		SES.arrayToContents 	=new Array();
-		SES.arrayGalleryHome 	=new Array();
-		SES.arrayComerciales 	=new Array();
-	}else{
-		getContentToWs();
-	}
-}
-function isOnLine(){
 	setTimeout(function(){
 		var networkState = navigator.connection.type;
 		var states = {};
@@ -25,8 +14,15 @@ function isOnLine(){
 		states[Connection.CELL_3G]  = '3g';
 		states[Connection.CELL_4G]  = '4g';
 		states[Connection.NONE]     = 'none';
+		alert(networkState);
+		if( networkState == 'none' || onLine == 'des'){
+			SES.arrayToContents 	=new Array();
+			SES.arrayGalleryHome 	=new Array();
+			SES.arrayComerciales 	=new Array();
+		}else{
+			getContentToWs();
+		}
 		
-		return networkState;
 	}, 1000);
 }
 function getContentToWs(){
