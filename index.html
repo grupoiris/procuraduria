@@ -32,8 +32,6 @@
 	  };
 	
 	  function onDeviceReady() {
-	  	alert('device ready');
-	  	console.log("onDeviceReady");
 	  	checkConnection();
 	  	isPhonegap = true;
 	    document.addEventListener("pause", onPause, true);
@@ -42,11 +40,9 @@
 	    document.addEventListener("menubutton", onPause, false);
 	    document.addEventListener("searchbutton", onPause, false);
 	  };
-		document.addEventListener("deviceready", function(){
-	      alert("123");
-	 },false);
+		document.addEventListener("deviceready", onDeviceReady,false);
 	  function onLoad() {
-	     document.addEventListener("deviceready", onDeviceReady, false);
+	     //document.addEventListener("deviceready", onDeviceReady, false);
 	  };
 	</script>
 </head>
