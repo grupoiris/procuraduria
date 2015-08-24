@@ -26,6 +26,8 @@ function checkConnection() {
 }
 function getContentToWs(){
 	console.log("getContentToWs");
+	alert("getContentToWs");
+	alert(SES.arrayToContents);
 	$.ajax({
         url:'http://procuraduriaapp.com/admin/dist/funciones.php',
 	     data: {action: 'getContents'},
