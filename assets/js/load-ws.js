@@ -5,7 +5,7 @@ var SES = window.localStorage;
 var isPhonegap = false;
 function checkConnection() {
 	var onLine = isOnLine();
-	if( onLine != 'none' && onLine != 'des'){
+	if( onLine == 'none' || onLine == 'des'){
 		SES.arrayToContents 	=new Array();
 		SES.arrayGalleryHome 	=new Array();
 		SES.arrayComerciales 	=new Array();
