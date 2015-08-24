@@ -15,7 +15,7 @@ function checkConnection() {
 		states[Connection.CELL_4G]  = '4g';
 		states[Connection.NONE]     = 'none';
 		alert(networkState);
-		if( networkState == 'none' || onLine == 'des'){
+		if( networkState == 'none' || networkState == 'des'){
 			SES.arrayToContents 	=new Array();
 			SES.arrayGalleryHome 	=new Array();
 			SES.arrayComerciales 	=new Array();
@@ -28,6 +28,7 @@ function checkConnection() {
 }
 function getContentToWs(){
 	alert("getContentToWs");
+	console.log("getContentToWs");
 	$.ajax({
         url:'http://procuraduriaapp.com/admin/dist/funciones.php',
 	     data: {action: 'getContents'},
