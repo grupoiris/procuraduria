@@ -32,6 +32,7 @@
 	  };
 	
 	  function onDeviceReady() {
+	  	alert('device ready');
 	  	console.log("onDeviceReady");
 	  	checkConnection();
 	  	isPhonegap = true;
@@ -47,7 +48,7 @@
 	  };
 	</script>
 </head>
-<body  onload="onDeviceReady();">
+<body  onload="onLoad();">
 
 <div class="splash animated fadeIn">
 	<div class="loading"></div>
