@@ -18,6 +18,11 @@ function checkConnection() {
 }
 function isOnLine(){
 	setTimeout(function(){
+		/*console.log(navigator.connection);
+		console.log("navigator connection type");
+		*/alert("navigator.connection.type");
+		alert(navigator.connection.type);
+		console.log(navigator.connection.type);
 		var networkState = navigator.connection.type;
 		var states = {};
 		states[Connection.UNKNOWN]  = 'des';
@@ -27,6 +32,9 @@ function isOnLine(){
 		states[Connection.CELL_3G]  = '3g';
 		states[Connection.CELL_4G]  = '4g';
 		states[Connection.NONE]     = 'none';
+		/*console.log("networkState");
+		console.log(networkState);
+		console.log(states[networkState]);*/
 		return states[networkState];
 	}, 500);
 }
