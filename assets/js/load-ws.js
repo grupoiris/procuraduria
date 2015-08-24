@@ -5,7 +5,6 @@ var SES = window.localStorage;
 var isPhonegap = false;
 function checkConnection() {
 	var onLine = isOnLine(); 
-	alert(onLine);
 	if( onLine == 'none' || onLine == 'des'){
 		SES.arrayToContents 	=new Array();
 		SES.arrayGalleryHome 	=new Array();
@@ -25,6 +24,7 @@ function isOnLine(){
 		states[Connection.CELL_3G]  = '3g';
 		states[Connection.CELL_4G]  = '4g';
 		states[Connection.NONE]     = 'none';
+		alert(networkState);
 		return states[networkState];
 	}, 1000);
 }
