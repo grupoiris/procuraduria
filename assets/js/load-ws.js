@@ -27,12 +27,12 @@ function checkConnection() {
 	}, 1000);
 }
 function getContentToLocalStorage(){
+	console.log("getContentToLocalStorage");
 	getMenu();
 	loadGaleriaHome();
 }
 function getContentToWs(){
 	console.log("getContentToWs");
-	alert("getContentToWs");
 	$.ajax({
         url:'http://procuraduriaapp.com/admin/dist/funciones.php',
 	     data: {action: 'getContents'},
