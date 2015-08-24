@@ -15,7 +15,9 @@ function checkConnection() {
 	getContentToWs();
 }
 function isOnLine(){
+	console.log("isOnLine");
 	console.log(navigator.connection);
+	console.log("navigator.connection.type");
 	console.log(navigator.connection.type);
 	var networkState = navigator.connection.type;
 	var states = {};
