@@ -23,9 +23,11 @@ function checkConnection() {
 			getContentToWs();
 		}
 		
+		return networkState;
 	}, 1000);
 }
 function getContentToWs(){
+	alert("getContentToWs");
 	$.ajax({
         url:'http://procuraduriaapp.com/admin/dist/funciones.php',
 	     data: {action: 'getContents'},
