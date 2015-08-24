@@ -4,7 +4,8 @@ var arrayComerciales 	=new Array();
 var SES = window.localStorage;
 var isPhonegap = false;
 function checkConnection() {
-	if(isOnLine() != 'none' && isOnLine() != 'des'){
+	var onLine = isOnLine();
+	if( onLine != 'none' && onLine != 'des'){
 		SES.arrayToContents 	=new Array();
 		SES.arrayGalleryHome 	=new Array();
 		SES.arrayComerciales 	=new Array();
@@ -33,8 +34,8 @@ function isOnLine(){
 		console.log("networkState");
 		console.log(networkState);
 		console.log(states[networkState]);
+		return states[networkState];
 	}, 500);
-	return states[networkState];
 }
 function getContentToWs(){
 	$.ajax({
