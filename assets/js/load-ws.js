@@ -14,12 +14,10 @@ function checkConnection() {
 		states[Connection.CELL_3G]  = '3g';
 		states[Connection.CELL_4G]  = '4g';
 		states[Connection.NONE]     = 'none';
-		alert(networkState);
-		if( networkState == 'none' || networkState == 'des'){
+		if( networkState != 'none' && networkState != 'des'){
 			SES.arrayToContents 	=new Array();
 			SES.arrayGalleryHome 	=new Array();
 			SES.arrayComerciales 	=new Array();
-		}else{
 			getContentToWs();
 		}
 		
@@ -27,7 +25,6 @@ function checkConnection() {
 	}, 1000);
 }
 function getContentToWs(){
-	alert("getContentToWs");
 	console.log("getContentToWs");
 	$.ajax({
         url:'http://procuraduriaapp.com/admin/dist/funciones.php',
