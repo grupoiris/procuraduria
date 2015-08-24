@@ -14,7 +14,7 @@ function checkConnection() {
 		states[Connection.CELL_3G]  = '3g';
 		states[Connection.CELL_4G]  = '4g';
 		states[Connection.NONE]     = 'none';
-		if( networkState != 'none' && networkState != 'des'){
+		if( networkState != 'none' && networkState != 'des'){ 
 			SES.arrayToContents 	=new Array();
 			SES.arrayGalleryHome 	=new Array();
 			SES.arrayComerciales 	=new Array();
