@@ -15,21 +15,25 @@ function checkConnection() {
 	getContentToWs();
 }
 function isOnLine(){
-	console.log("isOnLine");
-	console.log(navigator.connection);
-	console.log("navigator.connection.type");
-	console.log(navigator.connection.type);
-	var networkState = navigator.connection.type;
-	var states = {};
-	states[Connection.UNKNOWN]  = 'des';
-	states[Connection.ETHERNET] = 'net';
-	states[Connection.WIFI]     = 'wifi';
-	states[Connection.CELL_2G]  = '2g';
-	states[Connection.CELL_3G]  = '3g';
-	states[Connection.CELL_4G]  = '4g';
-	states[Connection.NONE]     = 'none';
-	console.log(networkState);
-	console.log(states[networkState]);
+	console.log("is OnLine");
+	setTimeout(function(){
+		console.log("navigator connection");
+		console.log(navigator.connection);
+		console.log("navigator connection type");
+		console.log(navigator.connection.type);
+		var networkState = navigator.connection.type;
+		var states = {};
+		states[Connection.UNKNOWN]  = 'des';
+		states[Connection.ETHERNET] = 'net';
+		states[Connection.WIFI]     = 'wifi';
+		states[Connection.CELL_2G]  = '2g';
+		states[Connection.CELL_3G]  = '3g';
+		states[Connection.CELL_4G]  = '4g';
+		states[Connection.NONE]     = 'none';
+		console.log("networkState");
+		console.log(networkState);
+		console.log(states[networkState]);
+	}, 500);
 	return states[networkState];
 }
 function getContentToWs(){
